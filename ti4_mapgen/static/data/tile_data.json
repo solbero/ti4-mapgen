@@ -2,7 +2,7 @@
   "systemTiles": [
     {
       "number": 18,
-      "back": "blue",
+      "back": null,
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -12,7 +12,7 @@
           "resources": 1,
           "influence": 6,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -29,7 +29,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "industrial",
-          "specialty": "cybernetic",
+          "tech": "cybernetic",
           "legendary": false
         }
       ]
@@ -46,7 +46,7 @@
           "resources": 2,
           "influence": 2,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -63,7 +63,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "propulsion",
+          "tech": "propulsion",
           "legendary": false
         }
       ]
@@ -80,7 +80,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "biotic",
+          "tech": "biotic",
           "legendary": false
         }
       ]
@@ -97,7 +97,7 @@
           "resources": 2,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -114,7 +114,7 @@
           "resources": 1,
           "influence": 3,
           "trait": "hazardous",
-          "specialty": "warfare",
+          "tech": "warfare",
           "legendary": false
         }
       ]
@@ -131,7 +131,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -148,7 +148,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -165,7 +165,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "biotic",
+          "tech": "biotic",
           "legendary": false
         },
         {
@@ -173,7 +173,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -190,7 +190,7 @@
           "resources": 2,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -198,7 +198,7 @@
           "resources": 0,
           "influence": 3,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -215,7 +215,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -223,7 +223,7 @@
           "resources": 0,
           "influence": 3,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -240,7 +240,7 @@
           "resources": 0,
           "influence": 2,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -248,7 +248,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -265,7 +265,7 @@
           "resources": 1,
           "influence": 0,
           "trait": "industrial",
-          "specialty": "cybernetic",
+          "tech": "cybernetic",
           "legendary": false
         },
         {
@@ -273,7 +273,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -290,7 +290,7 @@
           "resources": 0,
           "influence": 2,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -298,7 +298,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -315,7 +315,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -323,7 +323,7 @@
           "resources": 2,
           "influence": 0,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -340,7 +340,7 @@
           "resources": 1,
           "influence": 3,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -348,7 +348,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "propulsion",
+          "tech": "propulsion",
           "legendary": false
         }
       ]
@@ -365,7 +365,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -373,7 +373,7 @@
           "resources": 2,
           "influence": 3,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -390,7 +390,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -398,7 +398,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -415,7 +415,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -423,7 +423,7 @@
           "resources": 0,
           "influence": 4,
           "trait": "hazardous",
-          "specialty": "warfare",
+          "tech": "warfare",
           "legendary": false
         }
       ]
@@ -440,7 +440,7 @@
           "resources": 3,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -448,7 +448,7 @@
           "resources": 2,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -550,22 +550,6 @@
       "planets": []
     },
     {
-      "number": 51,
-      "back": "green",
-      "wormhole": "delta",
-      "anomaly": null,
-      "pok": false,
-      "planets": [
-        {
-          "name": "Creuss",
-          "resources": 4,
-          "influence": 2,
-          "specialty": null,
-          "legendary": false
-        }
-      ]
-    },
-    {
       "number": 59,
       "back": "blue",
       "wormhole": null,
@@ -577,7 +561,7 @@
           "resources": 1,
           "influence": 3,
           "trait": "hazardous",
-          "specialty": "propulsion",
+          "tech": "propulsion",
           "legendary": false
         }
       ]
@@ -594,7 +578,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -607,11 +591,11 @@
       "pok": true,
       "planets": [
         {
-          "name": "Perimeter",
+          "name": "Ang",
           "resources": 2,
           "influence": 0,
           "trait": "industrial",
-          "specialty": "warfare",
+          "tech": "warfare",
           "legendary": false
         }
       ]
@@ -628,7 +612,7 @@
           "resources": 3,
           "influence": 2,
           "trait": "cultural",
-          "specialty": "cybernetic",
+          "tech": "cybernetic",
           "legendary": false
         }
       ]
@@ -645,7 +629,7 @@
           "resources": 0,
           "influence": 2,
           "trait": "cultural",
-          "specialty": "biotic",
+          "tech": "biotic",
           "legendary": false
         }
       ]
@@ -662,7 +646,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -679,7 +663,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": true
         }
       ]
@@ -696,7 +680,7 @@
           "resources": 3,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": true
         }
       ]
@@ -713,7 +697,7 @@
           "resources": 2,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -730,7 +714,7 @@
           "resources": 3,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -747,7 +731,7 @@
           "resources": 2,
           "influence": 3,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -755,7 +739,7 @@
           "resources": 2,
           "influence": 3,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -772,7 +756,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -780,7 +764,7 @@
           "resources": 0,
           "influence": 2,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -797,7 +781,7 @@
           "resources": 3,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -805,7 +789,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -822,7 +806,7 @@
           "resources": 2,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -830,7 +814,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "warfare",
+          "tech": "warfare",
           "legendary": false
         }
       ]
@@ -843,11 +827,11 @@
       "pok": true,
       "planets": [
         {
-          "name": "Lisis",
+          "name": "Cealdri",
           "resources": 0,
           "influence": 2,
           "trait": "cultural",
-          "specialty": "cybernetic",
+          "tech": "cybernetic",
           "legendary": false
         },
         {
@@ -855,7 +839,7 @@
           "resources": 0,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -872,7 +856,7 @@
           "resources": 2,
           "influence": 1,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -880,7 +864,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "cultural",
-          "specialty": "propulsion",
+          "tech": "propulsion",
           "legendary": false
         }
       ]
@@ -897,7 +881,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -905,7 +889,7 @@
           "resources": 1,
           "influence": 0,
           "trait": "cultural",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -913,7 +897,7 @@
           "resources": 2,
           "influence": 0,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -930,7 +914,7 @@
           "resources": 0,
           "influence": 1,
           "trait": "hazardous",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -938,7 +922,7 @@
           "resources": 1,
           "influence": 2,
           "trait": "industrial",
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -946,7 +930,7 @@
           "resources": 1,
           "influence": 1,
           "trait": "industrial",
-          "specialty": "biotic",
+          "tech": "biotic",
           "legendary": false
         }
       ]
@@ -990,23 +974,6 @@
       "anomaly": "muaat-supernova",
       "pok": true,
       "planets": []
-    },
-    {
-      "number": 82,
-      "back": "blue",
-      "wormhole": "all",
-      "anomaly": null,
-      "pok": true,
-      "planets": [
-        {
-          "name": "Mallice",
-          "resources": 0,
-          "influence": 3,
-          "trait": "cultural",
-          "specialty": null,
-          "legendary": true
-        }
-      ]
     }
   ],
   "homeSystemTiles": [
@@ -1023,7 +990,7 @@
           "resources": 4,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1041,7 +1008,7 @@
           "resources": 4,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1059,7 +1026,7 @@
           "resources": 4,
           "influence": 4,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1077,7 +1044,7 @@
           "resources": 4,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1095,7 +1062,7 @@
           "resources": 3,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1113,7 +1080,7 @@
           "resources": 5,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1131,7 +1098,7 @@
           "resources": 3,
           "influence": 4,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1149,7 +1116,7 @@
           "resources": 4,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1167,7 +1134,7 @@
           "resources": 2,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1175,7 +1142,7 @@
           "resources": 3,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1193,7 +1160,7 @@
           "resources": 4,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1201,7 +1168,7 @@
           "resources": 2,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1219,7 +1186,7 @@
           "resources": 1,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1227,7 +1194,7 @@
           "resources": 2,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1245,7 +1212,7 @@
           "resources": 2,
           "influence": 3,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1253,7 +1220,7 @@
           "resources": 1,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1271,7 +1238,7 @@
           "resources": 1,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1279,7 +1246,7 @@
           "resources": 3,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1297,7 +1264,7 @@
           "resources": 2,
           "influence": 3,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1305,7 +1272,7 @@
           "resources": 1,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1323,7 +1290,7 @@
           "resources": 2,
           "influence": 3,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1331,7 +1298,7 @@
           "resources": 1,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1349,7 +1316,7 @@
           "resources": 2,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1357,7 +1324,7 @@
           "resources": 1,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1365,7 +1332,7 @@
           "resources": 0,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1392,7 +1359,7 @@
           "resources": 3,
           "influence": 5,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1410,7 +1377,7 @@
           "resources": 4,
           "influence": 4,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1428,7 +1395,7 @@
           "resources": 4,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1446,7 +1413,7 @@
           "resources": 4,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1456,7 +1423,7 @@
       "back": "green",
       "race": "The Empyrean",
       "wormhole": null,
-      "anomaly": null,
+      "anomaly": "nebula",
       "pok": true,
       "planets": [
         {
@@ -1464,7 +1431,7 @@
           "resources": 3,
           "influence": 4,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1482,7 +1449,7 @@
           "resources": 2,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1490,7 +1457,7 @@
           "resources": 1,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1508,7 +1475,7 @@
           "resources": 2,
           "influence": 0,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1516,7 +1483,7 @@
           "resources": 1,
           "influence": 1,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         },
         {
@@ -1524,7 +1491,7 @@
           "resources": 0,
           "influence": 2,
           "trait": null,
-          "specialty": null,
+          "tech": null,
           "legendary": false
         }
       ]
@@ -1670,6 +1637,42 @@
       "hyperlanes": [
         [0, 2],
         [0, 3]
+      ]
+    }
+  ],
+  "gateTiles": [
+    {
+      "number": 51,
+      "back": "green",
+      "wormhole": "delta",
+      "anomaly": null,
+      "pok": false,
+      "planets": [
+        {
+          "name": "Creuss",
+          "resources": 4,
+          "influence": 2,
+          "trait": null,
+          "tech": null,
+          "legendary": false
+        }
+      ]
+    },
+    {
+      "number": 82,
+      "back": null,
+      "wormhole": "gamma",
+      "anomaly": null,
+      "pok": true,
+      "planets": [
+        {
+          "name": "Mallice",
+          "resources": 0,
+          "influence": 3,
+          "trait": "cultural",
+          "tech": null,
+          "legendary": true
+        }
       ]
     }
   ]
