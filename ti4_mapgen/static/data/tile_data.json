@@ -966,14 +966,6 @@
       "anomaly": "supernova",
       "pok": true,
       "planets": []
-    },
-    {
-      "number": 81,
-      "back": "red",
-      "wormhole": null,
-      "anomaly": "muaat-supernova",
-      "pok": true,
-      "planets": []
     }
   ],
   "homeSystemTiles": [
@@ -1640,7 +1632,7 @@
       ]
     }
   ],
-  "gateTiles": [
+  "miscTiles": [
     {
       "number": 51,
       "back": "green",
@@ -1657,6 +1649,14 @@
           "legendary": false
         }
       ]
+    },
+    {
+      "number": 81,
+      "back": "red",
+      "wormhole": null,
+      "anomaly": "muaat-supernova",
+      "pok": true,
+      "planets": []
     },
     {
       "number": 82,
