@@ -972,7 +972,7 @@
     {
       "number": 1,
       "back": "green",
-      "race": "The Federation of Sol",
+      "faction": "The Federation of Sol",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -990,7 +990,7 @@
     {
       "number": 2,
       "back": "green",
-      "race": "The Mentak Coalition",
+      "faction": "The Mentak Coalition",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1008,7 +1008,7 @@
     {
       "number": 3,
       "back": "green",
-      "race": "The Yin Brotherhood",
+      "faction": "The Yin Brotherhood",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1026,7 +1026,7 @@
     {
       "number": 4,
       "back": "green",
-      "race": "The Embers of Muaat",
+      "faction": "The Embers of Muaat",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1044,7 +1044,7 @@
     {
       "number": 5,
       "back": "green",
-      "race": "The Arborec",
+      "faction": "The Arborec",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1062,7 +1062,7 @@
     {
       "number": 6,
       "back": "green",
-      "race": "The Lizix Mindnet",
+      "faction": "The Lizix Mindnet",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1080,7 +1080,7 @@
     {
       "number": 7,
       "back": "green",
-      "race": "The Winnu",
+      "faction": "The Winnu",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1098,7 +1098,7 @@
     {
       "number": 8,
       "back": "green",
-      "race": "The Nekro Virus",
+      "faction": "The Nekro Virus",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1116,7 +1116,7 @@
     {
       "number": 9,
       "back": "green",
-      "race": "The Naalu Collective",
+      "faction": "The Naalu Collective",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1142,7 +1142,7 @@
     {
       "number": 10,
       "back": "green",
-      "race": "The Barony of Letnev",
+      "faction": "The Barony of Letnev",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1168,7 +1168,7 @@
     {
       "number": 11,
       "back": "green",
-      "race": "The Clan of Saar",
+      "faction": "The Clan of Saar",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1194,7 +1194,7 @@
     {
       "number": 12,
       "back": "green",
-      "race": "The Universities of Jol-Nar",
+      "faction": "The Universities of Jol-Nar",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1220,7 +1220,7 @@
     {
       "number": 13,
       "back": "green",
-      "race": "Sardakk N'orr",
+      "faction": "Sardakk N'orr",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1246,7 +1246,7 @@
     {
       "number": 14,
       "back": "green",
-      "race": "The Xxcha Kingdom",
+      "faction": "The Xxcha Kingdom",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1272,7 +1272,7 @@
     {
       "number": 15,
       "back": "green",
-      "race": "The Yssaril Tribes",
+      "faction": "The Yssaril Tribes",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1298,7 +1298,7 @@
     {
       "number": 16,
       "back": "green",
-      "race": "The Emirates of Hacan",
+      "faction": "The Emirates of Hacan",
       "wormhole": null,
       "anomaly": null,
       "pok": false,
@@ -1332,7 +1332,7 @@
     {
       "number": 17,
       "back": "green",
-      "race": "The Ghosts of Creuss",
+      "faction": "The Ghosts of Creuss",
       "wormhole": "delta",
       "anomaly": null,
       "pok": false,
@@ -1341,7 +1341,7 @@
     {
       "number": 52,
       "back": "green",
-      "race": "The Mahact Gene-sorcerers",
+      "faction": "The Mahact Gene-sorcerers",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
@@ -1359,7 +1359,7 @@
     {
       "number": 53,
       "back": "green",
-      "race": "The Nomad",
+      "faction": "The Nomad",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
@@ -1377,7 +1377,7 @@
     {
       "number": 54,
       "back": "green",
-      "race": "The Vuil'raith Cabal",
+      "faction": "The Vuil'raith Cabal",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
@@ -1395,7 +1395,7 @@
     {
       "number": 55,
       "back": "green",
-      "race": "The Titans of Ul",
+      "faction": "The Titans of Ul",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
@@ -1413,7 +1413,7 @@
     {
       "number": 56,
       "back": "green",
-      "race": "The Empyrean",
+      "faction": "The Empyrean",
       "wormhole": null,
       "anomaly": "nebula",
       "pok": true,
@@ -1431,7 +1431,7 @@
     {
       "number": 57,
       "back": "green",
-      "race": "The Naaz-Rokha Alliance",
+      "faction": "The Naaz-Rokha Alliance",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
@@ -1457,7 +1457,7 @@
     {
       "number": 58,
       "back": "green",
-      "race": "The Argent Flight",
+      "faction": "The Argent Flight",
       "wormhole": null,
       "anomaly": null,
       "pok": true,
