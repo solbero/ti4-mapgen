@@ -6,11 +6,11 @@ from bidict import bidict
 
 
 CardinalDirection = Literal[
-    "E",
     "SE",
+    "S",
     "SW",
-    "W",
     "NW",
+    "N",
     "NE",
 ]
 
@@ -31,11 +31,11 @@ class CubeVector(NamedTuple):
 
 _CARDINAL_TO_VECTOR: bidict[CardinalDirection, CubeVector] = bidict(
     {
-        "E": CubeVector(1, 0, -1),
-        "SE": CubeVector(0, 1, -1),
+        "SE": CubeVector(1, 0, -1),
+        "S": CubeVector(0, 1, -1),
         "SW": CubeVector(-1, 1, 0),
-        "W": CubeVector(-1, 0, 1),
-        "NW": CubeVector(0, -1, 1),
+        "NW": CubeVector(-1, 0, 1),
+        "N": CubeVector(0, -1, 1),
         "NE": CubeVector(1, -1, 0),
     }
 )
