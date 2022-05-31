@@ -176,3 +176,8 @@ def calculate_length(a: CubeVector) -> int:
     """Calculate the length of a cube vector."""
     return abs(a.q) + abs(a.r) + abs(a.s) // 2
 
+
+def find_distance(a: CubePosition, b: CubePosition) -> int:
+    """Find the distance between two cube positions."""
+    vector = subtract(a, b)
+    return calculate_length(vector)
