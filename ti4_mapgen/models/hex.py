@@ -170,3 +170,9 @@ def rotate(a: CubePosition | CubeVector, center: CubePosition, angle: int = 0) -
         *_, vector = tuple(_rotate_left(vector) for _ in range(steps))
 
     return add(center, vector)
+
+
+def calculate_length(a: CubeVector) -> int:
+    """Calculate the length of a cube vector."""
+    return abs(a.q) + abs(a.r) + abs(a.s) // 2
+
