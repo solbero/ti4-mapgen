@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Literal, NamedTuple, Optional, overload
+from typing import Literal, NamedTuple, overload
 
 from bidict import bidict
 
