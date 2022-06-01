@@ -123,6 +123,11 @@ def cardinal_from_vector(vector: CubeVector) -> CardinalDirection:
     return _CARDINAL_TO_VECTOR.inv[vector]
 
 
+def index_from_vector(vector: CubeVector) -> int:
+    """Find the index corresponding to a cube vector."""
+    return _INDEX_TO_VECTOR.inv[vector]
+
+
 def adjacent(a: CubePosition, direction: CardinalDirection) -> CubePosition:
     """Find neighbor cube position in cardinal direction or cube vector from cube position."""
     if isinstance(direction, CardinalDirection):
