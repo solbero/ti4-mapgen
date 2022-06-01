@@ -102,20 +102,20 @@ def scale(a: CubePosition | CubeVector, scalar: int) -> CubePosition | CubeVecto
     return CubePosition(a.q * scalar, a.r * scalar, a.s * scalar)
 
 
-def find_vector_from_cardinal(direction: CardinalDirection) -> CubeVector:
+def vector_from_cardinal(direction: CardinalDirection) -> CubeVector:
     """Find the cube vector corresponding to a cardinal direction."""
     return _CARDINAL_TO_VECTOR[direction]
 
 
-def find_cardinal_from_vector(vector: CubeVector) -> CardinalDirection:
+def cardinal_from_vector(vector: CubeVector) -> CardinalDirection:
     """Find the cardinal direction corresponding to a cube vector."""
     return _CARDINAL_TO_VECTOR.inv[vector]
 
 
-def find_adjacent(a: CubePosition, direction: CardinalDirection) -> CubePosition:
+def adjacent(a: CubePosition, direction: CardinalDirection) -> CubePosition:
     """Find neighbor cube position in cardinal direction or cube vector from cube position."""
     if isinstance(direction, CardinalDirection):
-        vector = find_vector_from_cardinal(direction)
+        vector = vector_from_cardinal(direction)
     elif isinstance(direction, CubeVector):
         vector = direction
 
@@ -124,7 +124,7 @@ def find_adjacent(a: CubePosition, direction: CardinalDirection) -> CubePosition
 
 def ring(center: CubePosition, radius: int) -> list[CubePosition]:
     """Calculate all positions on a ring which is radius distance from the center position."""
-    vector = find_vector_from_cardinal("NW")
+    vector = vector_from_cardinal("NW")
     scaled_vector = scale(vector, radius)
     position = add(center, scaled_vector)
 
@@ -133,7 +133,7 @@ def ring(center: CubePosition, radius: int) -> list[CubePosition]:
     for cardinal_direction in _CARDINAL_TO_VECTOR.keys():
         for _ in range(radius):
             results.append(position)
-            position = find_adjacent(position, cardinal_direction)
+            position = adjacent(position, cardinal_direction)
 
     return results
 
@@ -172,12 +172,12 @@ def rotate(a: CubePosition | CubeVector, center: CubePosition, angle: int = 0) -
     return add(center, vector)
 
 
-def calculate_length(a: CubeVector) -> int:
+def length(a: CubeVector) -> int:
     """Calculate the length of a cube vector."""
     return abs(a.q) + abs(a.r) + abs(a.s) // 2
 
 
-def find_distance(a: CubePosition, b: CubePosition) -> int:
+def distance(a: CubePosition, b: CubePosition) -> int:
     """Find the distance between two cube positions."""
     vector = subtract(a, b)
-    return calculate_length(vector)
+    return length(vector)
