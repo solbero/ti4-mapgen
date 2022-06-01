@@ -37,8 +37,17 @@ _CARDINAL_TO_VECTOR: bidict[CardinalDirection, CubeVector] = bidict(
         "S": CubeVector(0, 1, -1),
         "SW": CubeVector(-1, 1, 0),
         "NW": CubeVector(-1, 0, 1),
-        "N": CubeVector(0, -1, 1),
-        "NE": CubeVector(1, -1, 0),
+    }
+)
+
+_INDEX_TO_VECTOR: bidict[int, CubeVector] = bidict(
+    {
+        0: CubeVector(0, -1, 1),  # N
+        1: CubeVector(1, -1, 0),  # NE
+        2: CubeVector(1, 0, -1),  # SE
+        3: CubeVector(0, 1, -1),  # S
+        4: CubeVector(-1, 1, 0),  # SW
+        5: CubeVector(-1, 0, 1),  # NW
     }
 )
 
