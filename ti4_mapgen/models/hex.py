@@ -31,6 +31,8 @@ class CubeVector(NamedTuple):
 
 _CARDINAL_TO_VECTOR: bidict[CardinalDirection, CubeVector] = bidict(
     {
+        "N": CubeVector(0, -1, 1),
+        "NE": CubeVector(1, -1, 0),
         "SE": CubeVector(1, 0, -1),
         "S": CubeVector(0, 1, -1),
         "SW": CubeVector(-1, 1, 0),
