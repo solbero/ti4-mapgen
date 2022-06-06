@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ti4_mapgen.models.typing import Anomaly, Wormhole, Trait, Tech
-from ti4_mapgen.models.hex import CardinalDirection
 
 
 @dataclass(frozen=True)
@@ -26,11 +25,3 @@ class Planet:
     trait: Optional[Trait]
     tech: Optional[Tech]
     legendary: bool
-
-
-@dataclass(frozen=True)
-class Hyperlane:
-    """Class representing a hyperlane system."""
-
-    hyperlanes: list[list[CardinalDirection]]
-    rotation: Optional[int] = 0
