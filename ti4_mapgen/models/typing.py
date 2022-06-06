@@ -66,3 +66,9 @@ Name = Literal[
     "The Yin Brotherhood",
     "The Yssaril Tribes",
 ]
+
+Tile = Literal[
+    "HomeSystemTile",
+    "HyperlineTile",
+    "SystemTile",
+]
