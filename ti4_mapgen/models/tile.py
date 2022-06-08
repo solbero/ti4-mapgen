@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Optional
+from dataclasses import dataclass
+from typing import Literal, Optional
 
 from dataclass_wizard import JSONFileWizard, JSONWizard
 
-from ti4_mapgen.models.typing import Name, Release, Letter, Back
-from ti4_mapgen.models.hex import CardinalDirection, CubePosition
-from ti4_mapgen.models.system import System
+from models.hex import CardinalDirection, CubePosition
+from models.system import System
+from models.typing import Back, Letter, Name, Release, Tile
 
 
 @dataclass(kw_only=True)
