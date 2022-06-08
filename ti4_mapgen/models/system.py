@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional
 
-from ti4_mapgen.models.typing import Anomaly, Wormhole, Trait, Tech
+from models.typing import Anomaly, Wormhole, Trait, Tech
 
 
 @dataclass(frozen=True)
