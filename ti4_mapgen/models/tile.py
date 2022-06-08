@@ -14,6 +14,7 @@ from models.typing import Back, Letter, Name, Release, Tile
 class BaseTile:
     """Class representing a base tile."""
 
+    type: Literal[Tile]
     position: Optional[CubePosition] = None
     number: int
 
