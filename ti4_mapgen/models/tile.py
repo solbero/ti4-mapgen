@@ -42,16 +42,3 @@ class HomeSystemTile(SystemTile):
     """Class representing a home system tile."""
 
     faction: Name
-
-
-@dataclass()
-class Stack(JSONWizard, JSONFileWizard):
-    """Class representing stacks of tiles."""
-
-    class _(JSONWizard.Meta):
-        skip_defaults = True
-
-    system_tiles: list[SystemTile] = field(default_factory=list)
-    home_system_tiles: list[HomeSystemTile] = field(default_factory=list)
-    special_tiles: list[SystemTile] = field(default_factory=list)
-    hyperlane_tiles: list[HyperlaneTile] = field(default_factory=list)
