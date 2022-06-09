@@ -1,44 +1,42 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Literal, Optional
+from dataclasses import dataclass, field
+from typing import Optional
 
-from dataclass_wizard import JSONFileWizard, JSONWizard
+from dataclass_wizard import JSONWizard, JSONFileWizard
 
-from models.hex import CardinalDirection, CubePosition
-from models.system import System
-from models.typing import Back, Letter, Name, Release, Tile
+from .hex import CardinalDirection, CubePosition
+from .typing import Back, Letter, Name, Release, Anomaly, Wormhole, Trait, Tech
 
 
-@dataclass(kw_only=True)
-class BaseTile:
-    """Class representing a base tile."""
+@dataclass(frozen=True, kw_only=True)
+class Tile(JSONWizard, JSONFileWizard):
+    """Class representing a tile."""
 
-    type: Literal[Tile]
+    class _(JSONWizard.Meta):
+        skip_defaults = True
+
     position: Optional[CubePosition] = None
     number: int
-
-
-@dataclass()
-class SystemTile(BaseTile):
-    """Class representing a system tile."""
-
-    back: Optional[Back]
+    letter: Optional[Letter] = None
+    type: str
+    back: Optional[Back] = None
     release: Release
-    system: System
-
-
-@dataclass(kw_only=True)
-class HyperlaneTile(BaseTile):
-    """Class representing a hyperlane tile."""
-
-    letter: Letter
     rotation: Optional[int] = 0
-    hyperlanes: list[list[CardinalDirection]]
+    faction: Optional[Name] = None
+    anomaly: Optional[Anomaly] = None
+    wormhole: Optional[Wormhole] = None
+    planets: Optional[list[Planet]] = field(default_factory=list)
+    hyperlanes: list[list[CardinalDirection]] = field(default_factory=list)
 
 
-@dataclass()
-class HomeSystemTile(SystemTile):
-    """Class representing a home system tile."""
+@dataclass(frozen=True, kw_only=True)
+class Planet:
+    """Class representing a planet in a system."""
 
-    faction: Name
+    name: str
+    resources: int
+    influence: int
+    trait: Optional[Trait] = None
+    tech: Optional[Tech] = None
+    legendary: bool

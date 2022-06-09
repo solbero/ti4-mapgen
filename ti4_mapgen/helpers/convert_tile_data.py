@@ -1,11 +1,10 @@
-import re
-from typing import Any
+from typing import Any, Optional
 
 import requests
+from dataclass_wizard import Container, fromlist
 
 from ti4_mapgen.models.hex import cardinal_from_vector, vector_from_index
-from ti4_mapgen.models.system import System, Planet
-from ti4_mapgen.models.tile import HomeSystemTile, HyperlaneTile, Stack, SystemTile
+from ti4_mapgen.models.tile import Tile, Planet
 
 
 def load(url: str) -> Any:
@@ -14,127 +13,105 @@ def load(url: str) -> Any:
     return response.json()
 
 
-def dump(stack: Stack, file: str) -> None:
-    """Dump stack data to JSON file"""
-    stack.to_json_file(file, indent=2)
+def parse(tiles: dict[str, dict]) -> Container[Tile]:
+    """Parse JSON tile data to tile dataclasses."""
+    stack = Container[Tile]()
 
+    for number, tile in tiles.items():
+        # Separate tile numbers from tile letters
+        try:
+            letter = None
+            number = int(number)
+        except ValueError:
+            letter = number[-1:]
+            number = int(number[:-1])
 
-def parse(tiles: dict[str, dict]) -> Stack:
-    """Route tile data to correct parse function."""
-    stack = Stack()
-
-    for num, tile in tiles.items():
-        match num:
-            case num if re.match(r"[0-9]+[A-Z]", num):
-                hyperlane_tile = parse_to_hyperlane_tile(num, tile)
-                stack.hyperlane_tiles.append(hyperlane_tile)
-            case num if 1 <= int(num) <= 17:
-                home_system_tile = parse_to_home_system_tile(num, tile)
-                stack.home_system_tiles.append(home_system_tile)
-            case num if int(num) == 18:
-                special_tile = parse_to_system_tile(num, tile)
-                stack.special_tiles.append(special_tile)
-            case num if 19 <= int(num) <= 50:
-                system_tile = parse_to_system_tile(num, tile)
-                stack.system_tiles.append(system_tile)
-            case num if int(num) == 51:
-                special_tile = parse_to_system_tile(num, tile)
-                stack.special_tiles.append(special_tile)
-            case num if 52 <= int(num) <= 58:
-                home_system_tile = parse_to_home_system_tile(num, tile)
-                stack.home_system_tiles.append(home_system_tile)
-            case num if 59 <= int(num) <= 80:
-                system_tile = parse_to_system_tile(num, tile)
-                stack.system_tiles.append(system_tile)
-            case num if 81 <= int(num) <= 82:
-                special_tile = parse_to_system_tile(num, tile)
-                stack.special_tiles.append(special_tile)
+        # Parse the home system tiles
+        if 1 <= number <= 17 or 52 <= number <= 58:
+            tile = to_tile("home-system-tile", number, letter, tile)
+            stack.append(tile)
+        # Parse the system tiles
+        elif 18 <= number <= 50 or 59 <= number <= 80:
+            tile = to_tile("system-tile", number, letter, tile)
+            stack.append(tile)
+        # Parse the hyperlane tiles
+        elif 83 <= number <= 91:
+            tile = to_tile("hyperlane-tile", number, letter, tile)
+            stack.append(tile)
+        # Parse the Ghost and Muat faction tiles
+        elif number == 51 or number == 81 or number == 82:
+            tile = to_tile("exterior-tile", number, letter, tile)
+            stack.append(tile)
 
     return stack
 
 
-def parse_to_hyperlane_tile(num, tile: dict[str, Any]) -> HyperlaneTile:
-    number = int(num[:-1])
-    letter = num[-1:]
-    hyperlanes = tile["hyperlanes"]
-    for index, hyperlane in enumerate(hyperlanes):
-        hyperlane = [cardinal_from_vector(vector_from_index(number)) for number in hyperlane]
-        hyperlanes[index] = hyperlane
-    return HyperlaneTile(number=number, letter=letter, hyperlanes=hyperlanes)
+def to_tile(type: str, number: int, letter: Optional[str], data: dict[str, Any]) -> Tile:
 
-
-def parse_to_system_tile(num, tile: dict[str, Any]) -> SystemTile:
-    number = int(num)
-    back = tile["type"]
+    number = number
+    letter = letter
     release = "base" if number < 52 else "pok"
-    wormhole = tile.get("wormhole")
-    anomaly = tile.get("anomaly")
+    faction = data.get("race")
 
-    match number:
-        case number if number == 61:
-            tile["planets"][0]["name"] = "Ang"
-        case number if number == 81:
-            anomaly = "supernova"
-        case number if number == 82:
-            wormhole = "gamma"
+    if number == 18 or 83 <= number <= 91:
+        back = None
+    else:
+        back = data.get("type")
 
-    planets = parse_to_planet(tile["planets"])
+    if number == 82:
+        wormhole = "gamma"
+    else:
+        wormhole = data.get("wormhole")
 
-    system = System(
+    if number == 56:
+        anomaly = "nebula"
+    elif number == 81:
+        anomaly = "supernova"
+    else:
+        anomaly = data.get("anomaly")
+
+    if planets := data.get("planets", list()):
+        if number == 61:
+            planets[0]["name"] = "Ang"
+        planets = to_planet(planets)
+
+    if hyperlanes := data.get("hyperlanes", list()):
+        for index, hyperlane in enumerate(hyperlanes):
+            hyperlane = [cardinal_from_vector(vector_from_index(number)) for number in hyperlane]
+            hyperlanes[index] = hyperlane
+
+    return Tile(
+        number=number,
+        letter=letter,
+        back=back,
+        faction=faction,
+        release=release,
         anomaly=anomaly,
         wormhole=wormhole,
         planets=planets,
+        hyperlanes=hyperlanes,
+        type=type,
     )
 
-    return SystemTile(number=number, back=back, release=release, system=system)
 
-
-def parse_to_home_system_tile(num, tile: dict[str, Any]) -> HomeSystemTile:
-    number = int(num)
-    back = tile["type"]
-    release = "base" if number < 52 else "pok"
-    faction = tile["race"]
-    wormhole = tile.get("wormhole")
-    anomaly = tile.get("anomaly")
-
-    match number:
-        case number if number == 56:
-            anomaly = "nebula"
-
-    planets = parse_to_planet(tile["planets"])
-
-    system = System(
-        anomaly=anomaly,
-        wormhole=wormhole,
-        planets=planets,
-    )
-
-    return HomeSystemTile(number=number, back=back, release=release, faction=faction, system=system)
-
-
-def parse_to_planet(planets: list[dict[str, Any]]) -> tuple[Planet]:
-    planet_list = []
+def to_planet(planets: list[dict[str, Any]]) -> list[Planet]:
+    list = []
     for planet in planets:
         name = planet["name"]
         resources = planet["resources"]
         influence = planet["influence"]
         trait = planet.get("trait")
-        tech = planet["specialty"]
+        tech = planet.get("specialty")
         legendary = planet["legendary"]
-        planet = Planet(
-            name=name,
-            resources=resources,
-            influence=influence,
-            trait=trait,
-            tech=tech,
-            legendary=legendary,
+        list.append(
+            Planet(name=name, resources=resources, influence=influence, trait=trait, tech=tech, legendary=legendary)
         )
-        planet_list.append(planet)
-    return tuple(planet_list)
+    return list
 
 
 if __name__ == "__main__":
-    data = load("https://raw.githubusercontent.com/KeeganW/ti4/master/src/data/tileData.json")
+    url = "https://raw.githubusercontent.com/KeeganW/ti4/master/src/data/tileData.json"
+    data = load(url)
     tiles: dict[str, dict] = data["all"]
     stack = parse(tiles)
-    dump(stack, "ti4_mapgen/static/data/tile_data.json")
+    stack.to_json_file("ti4_mapgen/static/data/tile_data.json", indent=2)
