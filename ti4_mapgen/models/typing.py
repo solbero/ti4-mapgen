@@ -9,6 +9,7 @@ Anomaly = Literal[
 Tech = Literal[
     "biotic",
     "cybernetic",
+    "propulsion",
     "warfare",
 ]
 Trait = Literal[
@@ -19,6 +20,7 @@ Trait = Literal[
 Wormhole = Literal[
     "alpha",
     "beta",
+    "delta",
     "gamma",
 ]
 
