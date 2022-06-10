@@ -124,4 +124,4 @@ if __name__ == "__main__":
     url = "https://raw.githubusercontent.com/KeeganW/ti4/master/src/data/tileData.json"
     data = load(url)
     tiles = parse(data["all"])
-    tiles.to_json_file("ti4_mapgen/static/data/tile_data.json", indent=2)
+    tiles.to_json_file("ti4_mapgen/data/tile_data.json", indent=2)

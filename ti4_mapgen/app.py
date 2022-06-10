@@ -12,8 +12,8 @@ app = Sanic(__name__)
 
 @app.before_server_start
 def setup_data(app):
-    app.ctx.maps = Map.from_json_file("./ti4_mapgen/static/data/map_data.json")
-    app.ctx.tiles = Tile.from_json_file("./ti4_mapgen/static/data/tile_data.json")
+    app.ctx.maps = Map.from_json_file("./ti4_mapgen/data/map_data.json")
+    app.ctx.tiles = Tile.from_json_file("./ti4_mapgen/data/tile_data.json")
 
 
 @app.post("/maps")
