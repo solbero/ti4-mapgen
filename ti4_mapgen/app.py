@@ -4,15 +4,16 @@ from __future__ import annotations
 
 from sanic import Request, Sanic, HTTPResponse, text
 
-from dataclass_wizard import Container
 from models.board import Map
+from models.tile import Tile
 
 app = Sanic(__name__)
 
 
 @app.before_server_start
-def setup(app):
+def setup_data(app):
     app.ctx.maps = Map.from_json_file("./ti4_mapgen/static/data/map_data.json")
+    app.ctx.tiles = Tile.from_json_file("./ti4_mapgen/static/data/tile_data.json")
 
 
 @app.post("/maps")
@@ -22,7 +23,7 @@ async def maps(request: Request) -> HTTPResponse:
 
 
 @app.post("/maps/<players:int>")
-async def maps_players(request: Request, players: int):
+async def maps_players(request: Request, players: int) -> HTTPResponse:
     maps: list[Map] = app.ctx.maps
     filtered_maps = [map for map in maps if map.players == players]
     return text(Map.list_to_json(filtered_maps), content_type="application/json")
@@ -46,13 +47,16 @@ async def races_release(request: Request, release):
 
 
 @app.post("/tiles")
-async def tiles(request: Request):
-    pass
+async def tiles(request: Request) -> HTTPResponse:
+    tiles: list[Tile] = app.ctx.tiles
+    return text(Tile.list_to_json(tiles), content_type="application/json")
 
 
 @app.post("/tiles/<number:int>")
-async def tiles_number(request: Request, number):
-    pass
+async def tiles_number(request: Request, number: int) -> HTTPResponse:
+    tiles: list[Tile] = app.ctx.tiles
+    filered_tiles = [tile for tile in tiles if tile.number == number]
+    return text(Tile.list_to_json(filered_tiles), content_type="application/json")
 
 
 if __name__ == "__main__":
