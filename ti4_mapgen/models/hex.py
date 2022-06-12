@@ -133,28 +133,41 @@ def index_from_vector(vector: CubeVector) -> int:
     return _INDEX_TO_VECTOR.inv[vector]
 
 
-def adjacent(a: CubePosition, direction: CardinalDirection) -> CubePosition:
+def adjacent(a: CubePosition, direction: CardinalDirection | CubeVector) -> CubePosition:
     """Find neighbor cube position in cardinal direction or cube vector from cube position."""
-    if isinstance(direction, CardinalDirection):
+    if isinstance(direction, str):
         vector = vector_from_cardinal(direction)
     elif isinstance(direction, CubeVector):
         vector = direction
+    else:
+        raise ValueError("Argument 'direction' must be 'CubeVector' or 'str'")
 
     return add(a, vector)
 
 
-def ring(center: CubePosition, radius: int) -> list[CubePosition]:
+def ring(
+    center: CubePosition, radius: int, direction: CardinalDirection = "N", clockwise: bool = True
+) -> list[CubePosition]:
     """Calculate all positions on a ring which is radius distance from the center position."""
-    vector = vector_from_cardinal("NW")
+    vector = vector_from_cardinal(direction)
     scaled_vector = scale(vector, radius)
     position = add(center, scaled_vector)
+    cardinal_list = list(_CARDINAL_TO_VECTOR.keys())
+
+    if not clockwise:
+        cardinal_list.reverse()
+
+    ordinal = cardinal_list.index(direction) + 1
+
+    # Rearranges the cardinal_list to the correct order, dependant on "starting direction".
+    for _ in range(1, (ordinal % len(cardinal_list)) + 2):
+        cardinal_list.append(cardinal_list.pop(0))
 
     results: list[CubePosition] = []
-
-    for cardinal_direction in _CARDINAL_TO_VECTOR.keys():
+    for direction in cardinal_list:
         for _ in range(radius):
             results.append(position)
-            position = adjacent(position, cardinal_direction)
+            position = adjacent(position, direction)
 
     return results
 
@@ -169,11 +182,11 @@ def _rotate_right(a: CubeVector) -> CubeVector:
     return CubeVector(-a.r, -a.s, -a.q)
 
 
-def rotate(a: CubePosition | CubeVector, center: CubePosition, angle: int = 0) -> CubePosition:
+def rotate(a: CubePosition | CubeVector, center: CubePosition = CubePosition(0, 0, 0), angle: int = 0) -> CubePosition:
     """Rotate a cube position around a center position."""
 
     # Check if 'angle' is divisible by 60, if not raise an error.
-    if 360 % angle != 0:
+    if angle % 60 != 0:
         raise ValueError("Argument 'angle' must be in 60 degree increments")
 
     if isinstance(a, CubePosition):
@@ -202,3 +215,12 @@ def distance(a: CubePosition, b: CubePosition) -> int:
     """Find the distance between two cube positions."""
     vector = subtract(a, b)
     return length(vector)
+
+
+def spiral(
+    center: CubePosition, radius: int, direction: CardinalDirection = "N", clockwise: bool = True
+) -> list[CubePosition]:
+    results = [center]
+    for i in range(radius + 1):
+        results.extend(ring(center, i))
+    return results
