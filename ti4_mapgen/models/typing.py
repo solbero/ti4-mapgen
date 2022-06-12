@@ -41,7 +41,7 @@ Release = Literal[
     "codex-3",
 ]
 
-Name = Literal[
+Faction = Literal[
     "Sardakk N'orr",
     "The Arborec",
     "The Argent Flight",
@@ -69,8 +69,9 @@ Name = Literal[
     "The Yssaril Tribes",
 ]
 
-Tile = Literal[
-    "HomeSystemTile",
-    "HyperlineTile",
-    "SystemTile",
+Tag = Literal[
+    "center",
+    "home",
+    "hyperline",
+    "system",
 ]
