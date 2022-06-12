@@ -1,1638 +1,1184 @@
 [
   {
     "number": 1,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Federation of Sol",
-    "planets": [
-      {
-        "name": "Jord",
-        "resources": 4,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 2,
+      "planets": 1
+    }
   },
   {
     "number": 2,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Mentak Coalition",
-    "planets": [
-      {
-        "name": "Moll Primus",
-        "resources": 4,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 1,
+      "planets": 1
+    }
   },
   {
     "number": 3,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Yin Brotherhood",
-    "planets": [
-      {
-        "name": "Darien",
-        "resources": 4,
-        "influence": 4,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 4,
+      "planets": 1
+    }
   },
   {
     "number": 4,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Embers of Muaat",
-    "planets": [
-      {
-        "name": "Muaat",
-        "resources": 4,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 1,
+      "planets": 1
+    }
   },
   {
     "number": 5,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Arborec",
-    "planets": [
-      {
-        "name": "Nestphar",
-        "resources": 3,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 2,
+      "planets": 1
+    }
   },
   {
     "number": 6,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Lizix Mindnet",
-    "planets": [
-      {
-        "name": "[0.0.0]",
-        "resources": 5,
-        "influence": 0,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 5,
+      "influence": 0,
+      "planets": 1
+    }
   },
   {
     "number": 7,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Winnu",
-    "planets": [
-      {
-        "name": "Winnu",
-        "resources": 3,
-        "influence": 4,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 4,
+      "planets": 1
+    }
   },
   {
     "number": 8,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Nekro Virus",
-    "planets": [
-      {
-        "name": "Mordai II",
-        "resources": 4,
-        "influence": 0,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 0,
+      "planets": 1
+    }
   },
   {
     "number": 9,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Naalu Collective",
-    "planets": [
-      {
-        "name": "Maaluuk",
-        "resources": 2,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Druaa",
-        "resources": 3,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 5,
+      "influence": 1,
+      "planets": 2
+    }
   },
   {
     "number": 10,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Barony of Letnev",
-    "planets": [
-      {
-        "name": "Arc Prime",
-        "resources": 4,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Wren Terra",
-        "resources": 2,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 6,
+      "influence": 1,
+      "planets": 2
+    }
   },
   {
     "number": 11,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Clan of Saar",
-    "planets": [
-      {
-        "name": "Lisis II",
-        "resources": 1,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Ragh",
-        "resources": 2,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 1,
+      "planets": 2
+    }
   },
   {
     "number": 12,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Universities of Jol-Nar",
-    "planets": [
-      {
-        "name": "Nar",
-        "resources": 2,
-        "influence": 3,
-        "legendary": false
-      },
-      {
-        "name": "Jol",
-        "resources": 1,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 5,
+      "planets": 2
+    }
   },
   {
     "number": 13,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "Sardakk N'orr",
-    "planets": [
-      {
-        "name": "Tren'lak",
-        "resources": 1,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Quinarra",
-        "resources": 3,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 1,
+      "planets": 2
+    }
   },
   {
     "number": 14,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Xxcha Kingdom",
-    "planets": [
-      {
-        "name": "Archon Ren",
-        "resources": 2,
-        "influence": 3,
-        "legendary": false
-      },
-      {
-        "name": "Archon Tau",
-        "resources": 1,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 4,
+      "planets": 2
+    }
   },
   {
     "number": 15,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Yssaril Tribes",
-    "planets": [
-      {
-        "name": "Retillion",
-        "resources": 2,
-        "influence": 3,
-        "legendary": false
-      },
-      {
-        "name": "Shalloq",
-        "resources": 1,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 5,
+      "planets": 2
+    }
   },
   {
     "number": 16,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Emirates of Hacan",
-    "planets": [
-      {
-        "name": "Arretze",
-        "resources": 2,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Hercant",
-        "resources": 1,
-        "influence": 1,
-        "legendary": false
-      },
-      {
-        "name": "Kamdorn",
-        "resources": 0,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 2,
+      "planets": 3
+    }
   },
   {
     "number": 17,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "base",
     "faction": "The Ghosts of Creuss",
-    "wormhole": "delta"
+    "back": "green",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "wormhole": "delta"
+    }
   },
   {
     "number": 18,
-    "type": "system-tile",
+    "tag": "mecatol",
     "release": "base",
-    "planets": [
-      {
-        "name": "Mecatol Rex",
-        "resources": 1,
-        "influence": 6,
-        "legendary": false
-      }
-    ]
+    "system": {
+      "resources": 1,
+      "influence": 6,
+      "planets": 1
+    }
   },
   {
     "number": 19,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Wellon",
-        "resources": 1,
-        "influence": 2,
-        "trait": "industrial",
-        "tech": "cybernetic",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 2,
+      "planets": 1,
+      "traits": ["industrial"],
+      "techs": ["cybernetic"]
+    }
   },
   {
     "number": 20,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Vefut II",
-        "resources": 2,
-        "influence": 2,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 2,
+      "planets": 1,
+      "traits": ["hazardous"]
+    }
   },
   {
     "number": 21,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Thibah",
-        "resources": 1,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "propulsion",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["industrial"],
+      "techs": ["propulsion"]
+    }
   },
   {
     "number": 22,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Tar'mann",
-        "resources": 1,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "biotic",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["industrial"],
+      "techs": ["biotic"]
+    }
   },
   {
     "number": 23,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Saudor",
-        "resources": 2,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 2,
+      "planets": 1,
+      "traits": ["industrial"]
+    }
   },
   {
     "number": 24,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Mehar Xull",
-        "resources": 1,
-        "influence": 3,
-        "trait": "hazardous",
-        "tech": "warfare",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 3,
+      "planets": 1,
+      "traits": ["hazardous"],
+      "techs": ["warfare"]
+    }
   },
   {
     "number": 25,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "wormhole": "beta",
-    "planets": [
-      {
-        "name": "Quann",
-        "resources": 2,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["cultural"],
+      "wormhole": "beta"
+    }
   },
   {
     "number": 26,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "wormhole": "alpha",
-    "planets": [
-      {
-        "name": "Lodor",
-        "resources": 3,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["cultural"],
+      "wormhole": "alpha"
+    }
   },
   {
     "number": 27,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "New Albion",
-        "resources": 1,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "biotic",
-        "legendary": false
-      },
-      {
-        "name": "Starpoint",
-        "resources": 3,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 4,
+      "influence": 2,
+      "planets": 2,
+      "traits": ["industrial", "hazardous"],
+      "techs": ["biotic"]
+    }
   },
   {
     "number": 28,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Tequ'ran",
-        "resources": 2,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": false
-      },
-      {
-        "name": "Torkan",
-        "resources": 0,
-        "influence": 3,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["hazardous", "cultural"]
+    }
   },
   {
     "number": 29,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Qucen'n",
-        "resources": 1,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Rarron",
-        "resources": 0,
-        "influence": 3,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 5,
+      "planets": 2,
+      "traits": ["industrial", "cultural"]
+    }
   },
   {
     "number": 30,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Mellon",
-        "resources": 0,
-        "influence": 2,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Zohbat",
-        "resources": 3,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["cultural", "hazardous"]
+    }
   },
   {
     "number": 31,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Lazar",
-        "resources": 1,
-        "influence": 0,
-        "trait": "industrial",
-        "tech": "cybernetic",
-        "legendary": false
-      },
-      {
-        "name": "Sakulag",
-        "resources": 2,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 1,
+      "planets": 2,
+      "traits": ["industrial", "hazardous"],
+      "techs": ["cybernetic"]
+    }
   },
   {
     "number": 32,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Dal Bootha",
-        "resources": 0,
-        "influence": 2,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Xxehan",
-        "resources": 1,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["cultural", "cultural"]
+    }
   },
   {
     "number": 33,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Corneeq",
-        "resources": 1,
-        "influence": 2,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Resulon",
-        "resources": 2,
-        "influence": 0,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 2,
+      "planets": 2,
+      "traits": ["cultural", "cultural"]
+    }
   },
   {
     "number": 34,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Centauri",
-        "resources": 1,
-        "influence": 3,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Gral",
-        "resources": 1,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "propulsion",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 4,
+      "planets": 2,
+      "traits": ["cultural", "industrial"],
+      "techs": ["propulsion"]
+    }
   },
   {
     "number": 35,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Bereg",
-        "resources": 3,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      },
-      {
-        "name": "Lirta IV",
-        "resources": 2,
-        "influence": 3,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 5,
+      "influence": 4,
+      "planets": 2,
+      "traits": ["hazardous", "hazardous"]
+    }
   },
   {
     "number": 36,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Arnor",
-        "resources": 2,
-        "influence": 1,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Lor",
-        "resources": 1,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["industrial", "industrial"]
+    }
   },
   {
     "number": 37,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Arinam",
-        "resources": 1,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Meer",
-        "resources": 0,
-        "influence": 4,
-        "trait": "hazardous",
-        "tech": "warfare",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 6,
+      "planets": 2,
+      "traits": ["industrial", "hazardous"],
+      "techs": ["warfare"]
+    }
   },
   {
     "number": 38,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "base",
-    "planets": [
-      {
-        "name": "Abyz",
-        "resources": 3,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": false
-      },
-      {
-        "name": "Fria",
-        "resources": 2,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 5,
+      "influence": 0,
+      "planets": 2,
+      "traits": ["hazardous", "hazardous"]
+    }
   },
   {
     "number": 39,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "wormhole": "alpha"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "wormhole": "alpha"
+    }
   },
   {
     "number": 40,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "wormhole": "beta"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "wormhole": "beta"
+    }
   },
   {
     "number": 41,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "anomaly": "gravity-rift"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "gravity-rift"
+    }
   },
   {
     "number": 42,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "anomaly": "nebula"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "nebula"
+    }
   },
   {
     "number": 43,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "anomaly": "supernova"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "supernova"
+    }
   },
   {
     "number": 44,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "anomaly": "asteroid-field"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "asteroid-field"
+    }
   },
   {
     "number": 45,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "base",
-    "anomaly": "asteroid-field"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "asteroid-field"
+    }
   },
   {
     "number": 46,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "base",
     "back": "red",
-    "release": "base"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 47,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "base",
     "back": "red",
-    "release": "base"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 48,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "base",
     "back": "red",
-    "release": "base"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 49,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "base",
     "back": "red",
-    "release": "base"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 50,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "base",
     "back": "red",
-    "release": "base"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 51,
-    "type": "exterior-tile",
-    "back": "green",
+    "tag": "exterior",
     "release": "base",
-    "wormhole": "delta",
-    "planets": [
-      {
-        "name": "Creuss",
-        "resources": 4,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "faction": "The Ghosts of Creuss",
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 2,
+      "planets": 1,
+      "wormhole": "delta"
+    }
   },
   {
     "number": 52,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Mahact Gene-sorcerers",
-    "planets": [
-      {
-        "name": "Ixth",
-        "resources": 3,
-        "influence": 5,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 5,
+      "planets": 1
+    }
   },
   {
     "number": 53,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Nomad",
-    "planets": [
-      {
-        "name": "Arcturus",
-        "resources": 4,
-        "influence": 4,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 4,
+      "planets": 1
+    }
   },
   {
     "number": 54,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Vuil'raith Cabal",
-    "planets": [
-      {
-        "name": "Acheron",
-        "resources": 4,
-        "influence": 0,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 0,
+      "planets": 1
+    }
   },
   {
     "number": 55,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Titans of Ul",
-    "planets": [
-      {
-        "name": "Elysium",
-        "resources": 4,
-        "influence": 1,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 4,
+      "influence": 1,
+      "planets": 1
+    }
   },
   {
     "number": 56,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Empyrean",
-    "anomaly": "nebula",
-    "planets": [
-      {
-        "name": "The Dark",
-        "resources": 3,
-        "influence": 4,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 4,
+      "planets": 1,
+      "anomaly": "nebula"
+    }
   },
   {
     "number": 57,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Naaz-Rokha Alliance",
-    "planets": [
-      {
-        "name": "Naazir",
-        "resources": 2,
-        "influence": 1,
-        "legendary": false
-      },
-      {
-        "name": "Rokha",
-        "resources": 1,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 3,
+      "planets": 2
+    }
   },
   {
     "number": 58,
-    "type": "home-system-tile",
-    "back": "green",
+    "tag": "home",
     "release": "pok",
     "faction": "The Argent Flight",
-    "planets": [
-      {
-        "name": "Valk",
-        "resources": 2,
-        "influence": 0,
-        "legendary": false
-      },
-      {
-        "name": "Avar",
-        "resources": 1,
-        "influence": 1,
-        "legendary": false
-      },
-      {
-        "name": "Ylir",
-        "resources": 0,
-        "influence": 2,
-        "legendary": false
-      }
-    ]
+    "back": "green",
+    "system": {
+      "resources": 3,
+      "influence": 3,
+      "planets": 3
+    }
   },
   {
     "number": 59,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Archon Vail",
-        "resources": 1,
-        "influence": 3,
-        "trait": "hazardous",
-        "tech": "propulsion",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 1,
+      "influence": 3,
+      "planets": 1,
+      "traits": ["hazardous"],
+      "techs": ["propulsion"]
+    }
   },
   {
     "number": 60,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Perimeter",
-        "resources": 2,
-        "influence": 1,
-        "trait": "industrial",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["industrial"]
+    }
   },
   {
     "number": 61,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Ang",
-        "resources": 2,
-        "influence": 0,
-        "trait": "industrial",
-        "tech": "warfare",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 0,
+      "planets": 1,
+      "traits": ["industrial"],
+      "techs": ["warfare"]
+    }
   },
   {
     "number": 62,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Sem-Lore",
-        "resources": 3,
-        "influence": 2,
-        "trait": "cultural",
-        "tech": "cybernetic",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 2,
+      "planets": 1,
+      "traits": ["cultural"],
+      "techs": ["cybernetic"]
+    }
   },
   {
     "number": 63,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Vorhal",
-        "resources": 0,
-        "influence": 2,
-        "trait": "cultural",
-        "tech": "biotic",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 0,
+      "influence": 2,
+      "planets": 1,
+      "traits": ["cultural"],
+      "techs": ["biotic"]
+    }
   },
   {
     "number": 64,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "wormhole": "beta",
-    "planets": [
-      {
-        "name": "Atlas",
-        "resources": 3,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["hazardous"],
+      "wormhole": "beta"
+    }
   },
   {
     "number": 65,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Primor",
-        "resources": 2,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": true
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["cultural"],
+      "legendary": true
+    }
   },
   {
     "number": 66,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Hope's End",
-        "resources": 3,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": true
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 0,
+      "planets": 1,
+      "traits": ["hazardous"],
+      "legendary": true
+    }
   },
   {
     "number": 67,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "pok",
-    "anomaly": "gravity-rift",
-    "planets": [
-      {
-        "name": "Cormund",
-        "resources": 2,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "red",
+    "system": {
+      "resources": 2,
+      "influence": 0,
+      "planets": 1,
+      "traits": ["hazardous"],
+      "anomaly": "gravity-rift"
+    }
   },
   {
     "number": 68,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "pok",
-    "anomaly": "nebula",
-    "planets": [
-      {
-        "name": "Everra",
-        "resources": 3,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "red",
+    "system": {
+      "resources": 3,
+      "influence": 1,
+      "planets": 1,
+      "traits": ["cultural"],
+      "anomaly": "nebula"
+    }
   },
   {
     "number": 69,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Accoen",
-        "resources": 2,
-        "influence": 3,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Jeol Ir",
-        "resources": 2,
-        "influence": 3,
-        "trait": "industrial",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 4,
+      "influence": 6,
+      "planets": 2,
+      "traits": ["industrial", "industrial"]
+    }
   },
   {
     "number": 70,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Kraag",
-        "resources": 2,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      },
-      {
-        "name": "Siig",
-        "resources": 0,
-        "influence": 2,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["hazardous", "hazardous"]
+    }
   },
   {
     "number": 71,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Ba'Kal",
-        "resources": 3,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Alio Prima",
-        "resources": 1,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 4,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["industrial", "cultural"]
+    }
   },
   {
     "number": 72,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Lisis",
-        "resources": 2,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Velnor",
-        "resources": 2,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "warfare",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 4,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["industrial", "industrial"],
+      "techs": ["warfare"]
+    }
   },
   {
     "number": 73,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Lisis",
-        "resources": 0,
-        "influence": 2,
-        "trait": "cultural",
-        "tech": "cybernetic",
-        "legendary": false
-      },
-      {
-        "name": "Xanhact",
-        "resources": 0,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 0,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["cultural", "hazardous"],
+      "techs": ["cybernetic"]
+    }
   },
   {
     "number": 74,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Vega Major",
-        "resources": 2,
-        "influence": 1,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Vega Minor",
-        "resources": 1,
-        "influence": 2,
-        "trait": "cultural",
-        "tech": "propulsion",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 3,
+      "influence": 3,
+      "planets": 2,
+      "traits": ["cultural", "cultural"],
+      "techs": ["propulsion"]
+    }
   },
   {
     "number": 75,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Loki",
-        "resources": 1,
-        "influence": 2,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Abaddon",
-        "resources": 1,
-        "influence": 0,
-        "trait": "cultural",
-        "legendary": false
-      },
-      {
-        "name": "Ashtroth",
-        "resources": 2,
-        "influence": 0,
-        "trait": "hazardous",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 4,
+      "influence": 2,
+      "planets": 3,
+      "traits": ["cultural", "cultural", "hazardous"]
+    }
   },
   {
     "number": 76,
-    "type": "system-tile",
-    "back": "blue",
+    "tag": "system",
     "release": "pok",
-    "planets": [
-      {
-        "name": "Rigel I",
-        "resources": 0,
-        "influence": 1,
-        "trait": "hazardous",
-        "legendary": false
-      },
-      {
-        "name": "Rigel II",
-        "resources": 1,
-        "influence": 2,
-        "trait": "industrial",
-        "legendary": false
-      },
-      {
-        "name": "Rigel III",
-        "resources": 1,
-        "influence": 1,
-        "trait": "industrial",
-        "tech": "biotic",
-        "legendary": false
-      }
-    ]
+    "back": "blue",
+    "system": {
+      "resources": 2,
+      "influence": 4,
+      "planets": 3,
+      "traits": ["hazardous", "industrial", "industrial"],
+      "techs": ["biotic"]
+    }
   },
   {
     "number": 77,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "pok",
     "back": "red",
-    "release": "pok"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 78,
-    "type": "system-tile",
+    "tag": "system",
+    "release": "pok",
     "back": "red",
-    "release": "pok"
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0
+    }
   },
   {
     "number": 79,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "pok",
-    "anomaly": "asteroid-field",
-    "wormhole": "alpha"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "asteroid-field",
+      "wormhole": "alpha"
+    }
   },
   {
     "number": 80,
-    "type": "system-tile",
-    "back": "red",
+    "tag": "system",
     "release": "pok",
-    "anomaly": "supernova"
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "supernova"
+    }
   },
   {
     "number": 81,
-    "type": "exterior-tile",
-    "back": "red",
+    "tag": "exterior",
     "release": "pok",
-    "anomaly": "supernova"
+    "faction": "The Embers of Muaat",
+    "back": "red",
+    "system": {
+      "resources": 0,
+      "influence": 0,
+      "planets": 0,
+      "anomaly": "supernova"
+    }
   },
   {
     "number": 82,
-    "type": "exterior-tile",
+    "tag": "exterior",
+    "release": "pok",
     "back": "blue",
-    "release": "pok",
-    "wormhole": "gamma",
-    "planets": [
-      {
-        "name": "Mallice",
-        "resources": 0,
-        "influence": 3,
-        "trait": "cultural",
-        "legendary": true
-      }
-    ]
+    "system": {
+      "resources": 0,
+      "influence": 3,
+      "planets": 1,
+      "traits": ["cultural"],
+      "wormhole": "gamma",
+      "legendary": true
+    }
   },
   {
     "number": 83,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
-    "hyperlanes": [
-      [
-        "NE",
-        "SW"
-      ]
-    ]
+    "hyperlanes": [["NE", "SW"]]
   },
   {
     "number": 83,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "S",
-        "NW"
-      ]
+      ["N", "S"],
+      ["N", "SE"],
+      ["S", "NW"]
     ]
   },
   {
     "number": 84,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
-    "hyperlanes": [
-      [
-        "SE",
-        "NW"
-      ]
-    ]
+    "hyperlanes": [["SE", "NW"]]
   },
   {
     "number": 84,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SW"
-      ],
-      [
-        "NE",
-        "S"
-      ]
+      ["N", "S"],
+      ["N", "SW"],
+      ["NE", "S"]
     ]
   },
   {
     "number": 85,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
-    "hyperlanes": [
-      [
-        "NE",
-        "NW"
-      ]
-    ]
+    "hyperlanes": [["NE", "NW"]]
   },
   {
     "number": 85,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "S",
-        "NW"
-      ]
+      ["N", "S"],
+      ["N", "SE"],
+      ["S", "NW"]
     ]
   },
   {
     "number": 86,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
-    "hyperlanes": [
-      [
-        "NE",
-        "NW"
-      ]
-    ]
+    "hyperlanes": [["NE", "NW"]]
   },
   {
     "number": 86,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SW"
-      ],
-      [
-        "NE",
-        "S"
-      ]
+      ["N", "S"],
+      ["N", "SW"],
+      ["NE", "S"]
     ]
   },
   {
     "number": 87,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "SE",
-        "SW"
-      ],
-      [
-        "SE",
-        "NW"
-      ]
+      ["N", "SE"],
+      ["SE", "SW"],
+      ["SE", "NW"]
     ]
   },
   {
     "number": 87,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "N",
-        "S"
-      ]
+      ["N", "SE"],
+      ["N", "S"]
     ]
   },
   {
     "number": 88,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "SW"
-      ],
-      [
-        "NE",
-        "SW"
-      ],
-      [
-        "SE",
-        "SW"
-      ]
+      ["N", "SW"],
+      ["NE", "SW"],
+      ["SE", "SW"]
     ]
   },
   {
     "number": 88,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "S",
-        "NW"
-      ]
+      ["N", "S"],
+      ["N", "SE"],
+      ["S", "NW"]
     ]
   },
   {
     "number": 89,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "N",
-        "SW"
-      ],
-      [
-        "SE",
-        "SW"
-      ]
+      ["N", "SE"],
+      ["N", "SW"],
+      ["SE", "SW"]
     ]
   },
   {
     "number": 89,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SW"
-      ]
+      ["N", "S"],
+      ["N", "SW"]
     ]
   },
   {
     "number": 90,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "NE",
-        "NW"
-      ],
-      [
-        "SE",
-        "SW"
-      ]
+      ["NE", "NW"],
+      ["SE", "SW"]
     ]
   },
   {
     "number": 90,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SW"
-      ]
+      ["N", "S"],
+      ["N", "SW"]
     ]
   },
   {
     "number": 91,
     "letter": "A",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "S"
-      ],
-      [
-        "N",
-        "SW"
-      ],
-      [
-        "NE",
-        "S"
-      ]
+      ["N", "S"],
+      ["N", "SW"],
+      ["NE", "S"]
     ]
   },
   {
     "number": 91,
     "letter": "B",
-    "type": "hyperlane-tile",
+    "tag": "hyperlane",
     "release": "pok",
     "hyperlanes": [
-      [
-        "N",
-        "SE"
-      ],
-      [
-        "N",
-        "S"
-      ]
+      ["N", "SE"],
+      ["N", "S"]
     ]
   }
 ]
