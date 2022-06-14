@@ -3,10 +3,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
 
-from dataclass_wizard import JSONWizard, JSONFileWizard
+from dataclass_wizard import JSONFileWizard, JSONWizard
 
-from .hex import CardinalDirection, Cube
-from .typing import Back, Letter, Faction, Release, Anomaly, Wormhole, Trait, Tech, Tag
+from .hex import Cube
+from .typing import Anomaly, Back, Faction, Letter, Release, Tag, Tech, Trait, Wormhole
 
 
 @dataclass(frozen=False, kw_only=True)
@@ -17,39 +17,26 @@ class Tile(JSONWizard, JSONFileWizard):
         skip_defaults = True
 
     tag: Tag
-    number: int
+    number: Optional[int] = None
     letter: Optional[Letter] = None
-    release: Release
+    position: Optional[Cube] = None
+    release: Optional[Release] = None
+    faction: Optional[Faction] = None
     back: Optional[Back] = None
     rotation: Optional[int] = 0
     system: Optional[System] = None
-
-
-@dataclass()
-class TileFaceDown:
-    """Class representing a face-down tile."""
-    tag: Tag
-    back: Back
+    hyperlanes: list[list[Cube]] = field(default_factory=list)
 
 
 @dataclass(frozen=True, kw_only=True)
 class System:
     """Class representing the system in a tile."""
 
-    faction: Optional[Faction] = None
-    anomaly: Optional[Anomaly] = None
-    wormhole: Optional[Wormhole] = None
-    planets: list[Planet] = field(default_factory=list)
-    hyperlanes: list[list[CardinalDirection | Cube]] = field(default_factory=list)
-
-
-@dataclass(frozen=True, kw_only=True)
-class Planet:
-    """Class representing a planet in a system."""
-
-    name: str
     resources: int
     influence: int
-    trait: Optional[Trait] = None
-    tech: Optional[Tech] = None
-    legendary: bool
+    planets: int
+    traits: list[Trait] = field(default_factory=list)
+    techs: list[Tech] = field(default_factory=list)
+    anomaly: Optional[Anomaly] = None
+    wormhole: Optional[Wormhole] = None
+    legendary: bool = False
