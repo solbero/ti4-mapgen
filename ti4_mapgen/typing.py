@@ -70,8 +70,9 @@ Faction = Literal[
 ]
 
 Tag = Literal[
-    "center",
+    "mecatol",
     "home",
-    "hyperline",
+    "hyperlane",
     "system",
+    "exterior",
 ]

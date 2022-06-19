@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from bidict import bidict
 
 from dataclass_wizard import JSONWizard, JSONFileWizard
-from models.typing import Release
-from models.typing import Faction as Name
+from ti4_mapgen.typing import Release
+from ti4_mapgen.typing import Faction as Name
 
 TILE_NUMBER_TO_FACTION_NAME: bidict[int, Name] = bidict(
     {

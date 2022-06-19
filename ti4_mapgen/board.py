@@ -7,7 +7,7 @@ from typing import Optional
 
 from dataclass_wizard import JSONFileWizard, JSONWizard
 
-from ti4_mapgen.models.typing import Anomaly, Back, Faction, Letter, Release, Tag, Tech, Trait, Wormhole
+from ti4_mapgen.typing import Anomaly, Back, Faction, Letter, Release, Tag, Tech, Trait, Wormhole
 
 from .hex import Cube
 

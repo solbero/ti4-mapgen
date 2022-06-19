@@ -1,6 +1,6 @@
 import pytest
 
-from ti4_mapgen.models import hex
+from ti4_mapgen import hex
 
 
 class TestHex:
