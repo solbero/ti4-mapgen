@@ -1,13 +1,12 @@
 from __future__ import annotations
 
+import dataclasses
+import enum
 from collections import deque
-from dataclasses import dataclass
-from enum import Enum
-from collections.abc import Iterator, Sequence
-from typing import overload
+from collections.abc import Iterator
 
 
-@dataclass(frozen=True, slots=True)
+@dataclasses.dataclass(frozen=True, slots=True)
 class Cube:
     "A cube representation of a position or vector in a hexagonal grid."
     q: int
@@ -42,7 +41,7 @@ class Cube:
         return (abs(self.q) + abs(self.r) + abs(self.s)) // 2
 
 
-class Direction(Enum):
+class Direction(enum.Enum):
     N = Cube(0, -1, 1)
     NE = Cube(1, -1, 0)
     SE = Cube(1, 0, -1)
@@ -51,7 +50,7 @@ class Direction(Enum):
     NW = Cube(-1, 0, 1)
 
 
-class Diagonal(Enum):
+class Diagonal(enum.Enum):
     E = Cube(2, -1, -1)
     NNE = Cube(1, -2, 1)
     NNW = Cube(-1, -1, 2)
@@ -60,23 +59,23 @@ class Diagonal(Enum):
     SSE = Cube(1, 1, -2)
 
 
-class Move(Enum):
+class move(enum.Enum):
     CLOCKWISE = 1
     COUNTERCLOCKWISE = -1
 
 
-def adjacent(a: Cube, direction: Direction) -> Cube:
+def adjacent(hex: Cube, *, direction: Direction) -> Cube:
     """Find an adjacent cube position in direction from initial cube position."""
-    return a + direction.value
+    return hex + direction.value
 
 
-def diagonal(a: Cube, direction: Diagonal) -> Cube:
+def diagonal(hex: Cube, *, direction: Diagonal) -> Cube:
     """Find a diagonal cube position in direction from initial cube position."""
-    return a + direction.value
+    return hex + direction.value
 
 
 def ring(
-    center: Cube, radius: int, *, direction: Direction = Direction.N, move: Move = Move.CLOCKWISE
+    center: Cube, radius: int, *, direction: Direction = Direction.N, move: move = move.CLOCKWISE
 ) -> Iterator[Cube]:
     """Calculate all positions on a ring which is radius distance from a center position.
 
@@ -86,8 +85,8 @@ def ring(
     Args:
         center: Cube position in center of ring.
         radius: Ring distance from center position.
-        direction (optional): Direction to start from center position. Defaults to Direction.N.
-        move (optional): Direction to move around the ring. Defaults to Move.CLOCKWISE.
+        direction (optional): Direction to start from center position.
+        move (optional): Direction to move around the ring.
 
     Yields:
         Cube position in ring.
@@ -97,7 +96,7 @@ def ring(
     position = center + scaled_vector
     neighbors = deque(direction.value for direction in Direction)
 
-    if move is Move.COUNTERCLOCKWISE:
+    if move is move.COUNTERCLOCKWISE:
         neighbors.reverse()
 
     # Rearranges 'neighbors' to the correct order for moving around the ring
@@ -107,75 +106,69 @@ def ring(
     for neighbor in neighbors:
         for _ in range(radius):
             yield position
-            position = adjacent(position, Direction(neighbor))
+            position = adjacent(position, direction=Direction(neighbor))
 
 
-def _rotate_right(a: Cube) -> Cube:
+def _rotate_clockwise(hex: Cube) -> Cube:
     """Rotate a cube vector counterclockwise."""
-    return Cube(-a.r, -a.s, -a.q)
+    return Cube(-hex.r, -hex.s, -hex.q)
 
 
-def _rotate_left(a: Cube) -> Cube:
+def _rotate_counterclockwise(hex: Cube) -> Cube:
     """Rotate a cube vector counterclockwise."""
-    return Cube(-a.s, -a.q, -a.r)
+    return Cube(-hex.s, -hex.q, -hex.r)
 
 
-def rotate(a: Cube, center: Cube, *, angle: int = 0, move: Move = Move.CLOCKWISE) -> Cube:
+def rotate(hex: Cube, center: Cube, *, angle: int) -> Cube:
     """Rotate a cube position or vector around a center position.
 
     Args:
-        a: Cube position or vector to rotate around a center.
-        center (optional): Cube position to use as the center of rotation.
-        angle (optional): Degrees to rotate a cube position or vector around the center. Defaults to 0.
-        rotate (optional): Direction to perform rotation. Defaults to Move.CLOCKWISE.
+        hex: Cube position or vector to rotate around a center.
+        center: Cube position to use as the center of rotation.
+        angle: Degrees to rotate a cube position or vector around the center.
 
     Raises:
-        ValueError: If 'angle' is not a positive integer.
         ValueError: If 'angle' is not divisible by 60.
 
     Returns:
         Rotated cube position.
     """
-    # Check if 'angle' is a positive number.
-    if angle < 0:
-        raise ValueError("Argument 'angle' must be a positive integer.")
 
     # Check if 'angle' is divisible by 60.
     if angle % 60 != 0:
         raise ValueError("Argument 'angle' must be in 60 degree increments")
 
-    vector = a - center
-    steps = (angle % 360) // 60
+    vector = hex - center
+    steps = abs((angle % 360) // 60)
 
-    for _ in range(steps):
-        if move is Move.CLOCKWISE:
-            vector = _rotate_right(vector)
-        elif move is Move.COUNTERCLOCKWISE:
-            vector = _rotate_left(vector)
+    if angle > 0:
+        *_, vector = [_rotate_clockwise(vector) for _ in range(steps)]
+    elif angle < 0:
+        *_, vector = [_rotate_counterclockwise(vector) for _ in range(steps)]
 
     return center + vector
 
 
-def length(a: Cube) -> int:
+def length(hex: Cube) -> int:
     """Calculate the length of a cube vector."""
-    return abs(a)
+    return abs(hex)
 
 
-def distance(a: Cube, b: Cube) -> int:
+def distance(hex1: Cube, hex2: Cube) -> int:
     """Find the distance between two cube positions."""
-    return length(a - b)
+    return length(hex1 - hex2)
 
 
 def spiral(
-    center: Cube, radius: int, *, direction: Direction = Direction.N, move: Move = Move.CLOCKWISE
+    center: Cube, radius: int, *, direction: Direction = Direction.N, move: move = move.CLOCKWISE
 ) -> Iterator[Cube]:
     """Calculate all positions in a spiral pattern which is radius distance from a center position.
 
     Args:
         center: Cube position in center of spiral.
         radius: Spiral distance from center position.
-        direction (optional): Direction to start from center position. Defaults to "Direction.N".
-        clockwise (optional): Direction to move around the spiral. Defaults to Rotate.CLOCKWISE.
+        direction (optional): Direction to start from center position.
+        clockwise (optional): Direction to move around the spiral.
 
     Yields:
         Cube position in spiral.
