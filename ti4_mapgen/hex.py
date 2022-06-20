@@ -4,6 +4,7 @@ import dataclasses
 import enum
 from collections import deque
 from collections.abc import Iterator
+from typing import Iterable, Mapping
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
@@ -15,27 +16,30 @@ class Cube:
 
     def __post_init__(self):
         # Perform sanity check on coordinate.
-        assert self.q + self.r + self.s == 0, "Sum of 'q', 'r', 's' must be 0"
+        if self.q + self.r + self.s != 0:
+            raise ValueError("Sum of 'q', 'r', 's' must be 0")
 
-    def __add__(self, other: Cube) -> Cube:
-        if not isinstance(other, Cube):
-            raise NotImplementedError
-        return Cube(self.q + other.q, self.r + other.r, self.s + other.s)
+    def __add__(self, cube) -> Cube:
+        match cube:
+            case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
+                return Cube(self.q + q, self.r + r, self.s + s)
+        raise TypeError(f"Unsupported operand type(s) for +: '{type(self)}' and '{type(cube)}'")
 
-    def __sub__(self, other: Cube) -> Cube:
-        if not isinstance(other, Cube):
-            raise NotImplementedError
-        return Cube(self.q - other.q, self.r - other.r, self.s - other.s)
+    def __sub__(self, cube) -> Cube:
+        match cube:
+            case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
+                return Cube(self.q - q, self.r - r, self.s - s)
+        raise TypeError(f"Unsupported operand type(s) for -: '{type(self)}' and '{type(cube)}'")
 
-    def __mul__(self, other: int):
-        if not isinstance(other, int):
-            raise NotImplementedError
-        return Cube(self.q * other, self.r * other, self.s * other)
+    def __mul__(self, scalar) -> Cube:
+        if isinstance(scalar, int):
+            return Cube(self.q * scalar, self.r * scalar, self.s * scalar)
+        raise TypeError(f"Unsupported operand type(s) for *: '{type(self)}' and '{type(scalar)}'")
 
-    def __floordiv__(self, other: Cube | int):
-        if not isinstance(other, int):
-            raise NotImplementedError
-        return Cube(int(self.q / other), int(self.r / other), int(self.s / other))
+    def __floordiv__(self, scalar) -> Cube:
+        if isinstance(scalar, int):
+            return Cube(int(self.q / scalar), int(self.r / scalar), int(self.s / scalar))
+        raise TypeError(f"Unsupported operand type(s) for //: '{type(self)}' and '{type(scalar)}'")
 
     def __abs__(self) -> int:
         return (abs(self.q) + abs(self.r) + abs(self.s)) // 2
