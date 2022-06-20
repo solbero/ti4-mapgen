@@ -17,7 +17,7 @@ class TestHex:
         assert hex_.s == 0
 
     def test_hex_raises(self):
-        with pytest.raises(AssertionError) as exc_info:
+        with pytest.raises(ValueError) as exc_info:
             hex.Cube(1, 0, 1)
         message, *_ = exc_info.value.args
         expected = "Sum of 'q', 'r', 's' must be 0"
@@ -35,16 +35,30 @@ class TestHexOperators:
         hex2 = hex.Cube(0, 1, -1)
         assert hex1 != hex2
 
-    def test_hex_add(self):
+    @pytest.mark.parametrize(
+        "hex2, expected",
+        [
+            (hex.Cube(0, -1, 1), hex.Cube(0, 0, 0)),
+            ((0, -1, 1), hex.Cube(0, 0, 0)),
+            ([0, -1, 1], hex.Cube(0, 0, 0)),
+            ({"q": 0, "r": -1, "s": 1}, hex.Cube(0, 0, 0)),
+        ],
+    )
+    def test_hex_add(self, hex2, expected):
         hex1 = hex.Cube(0, 1, -1)
-        hex2 = hex.Cube(0, -1, 1)
-        expected = hex.Cube(0, 0, 0)
         assert hex1 + hex2 == expected
 
-    def test_hex_sub(self):
+    @pytest.mark.parametrize(
+        "hex2, expected",
+        [
+            (hex.Cube(0, -1, 1), hex.Cube(0, 2, -2)),
+            ((0, -1, 1), hex.Cube(0, 2, -2)),
+            ([0, -1, 1], hex.Cube(0, 2, -2)),
+            ({"q": 0, "r": -1, "s": 1}, hex.Cube(0, 2, -2)),
+        ],
+    )
+    def test_hex_sub(self, hex2, expected):
         hex1 = hex.Cube(0, 1, -1)
-        hex2 = hex.Cube(0, -1, 1)
-        expected = hex.Cube(0, 2, -2)
         assert hex1 - hex2 == expected
 
     def test_hex_mul(self):
@@ -52,15 +66,15 @@ class TestHexOperators:
         expected = hex.Cube(0, 2, -2)
         assert hex_ * 2 == expected
 
-    def test_hex_floordiv(self):
-        hex_ = hex.Cube(0, -2, 2)
-        expected = hex.Cube(0, -1, 1)
-        assert hex_ // 2 == expected
-
-    def test_hex_floordiv_rounding(self):
-        hex_ = hex.Cube(0, -1, 1)
-        expected = hex.Cube(0, 0, 0)
-        assert hex_ // 2 == expected
+    @pytest.mark.parametrize(
+        "hex_, k, expected",
+        [
+            (hex.Cube(0, -2, 2), 2, hex.Cube(0, -1, 1)),
+            (hex.Cube(0, -1, 1), 2, hex.Cube(0, 0, 0)),
+        ],
+    )
+    def test_hex_floordiv(self, hex_, k, expected):
+        assert hex_ // k == expected
 
     def test_hex_abs(self):
         hex_ = hex.Cube(0, -2, 2)
