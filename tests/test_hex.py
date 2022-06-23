@@ -277,7 +277,7 @@ class TestHexRotate:
         with pytest.raises(ValueError) as exc_info:
             hex.rotate(hex_, center, angle=angle)
         message, *_ = exc_info.value.args
-        expected = "Argument 'angle' must be in 60 degree increments"
+        expected = "argument 'angle' must be in 60 degree increments"
         assert message == expected
 
 
