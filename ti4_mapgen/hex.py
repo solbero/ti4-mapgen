@@ -150,6 +150,9 @@ def _rotate_counterclockwise(hex: Cube) -> Cube:
 def rotate(hex: Cube, center: Cube, *, angle: int) -> Cube:
     """Rotate a cube position or vector around a center position.
 
+    Note:
+        If argument 'angle' is positive rotation is clockwise, if negative rotation is counterclockwise.
+
     Args:
         hex: Cube position or vector to rotate around a center.
         center: Cube position to use as the center of rotation.
@@ -164,7 +167,7 @@ def rotate(hex: Cube, center: Cube, *, angle: int) -> Cube:
 
     # Check if 'angle' is divisible by 60.
     if angle % 60 != 0:
-        raise ValueError("Argument 'angle' must be in 60 degree increments")
+        raise ValueError("argument 'angle' must be in 60 degree increments")
 
     vector = hex - center
     steps = abs((angle % 360) // 60)
