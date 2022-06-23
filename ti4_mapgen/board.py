@@ -1,75 +1,26 @@
 from __future__ import annotations
 
+import dataclasses
+
 import random
 from copy import deepcopy
-from dataclasses import InitVar, dataclass, field
 from typing import Optional
 
-from dataclass_wizard import JSONFileWizard, JSONWizard
+import dataclass_wizard
 
-from ti4_mapgen.typing import Anomaly, Back, Faction, Letter, Release, Tag, Tech, Trait, Wormhole
-
-from .hex import Cube
-
-
-@dataclass(frozen=False, kw_only=True)
-class Tile(JSONWizard, JSONFileWizard):
-    """Class representing a tile."""
-
-    class _(JSONWizard.Meta):
-        skip_defaults = True
-
-    tag: Tag
-    number: Optional[int] = None
-    letter: Optional[Letter] = None
-    position: Optional[Cube] = None
-    release: Optional[Release] = None
-    faction: Optional[Faction] = None
-    back: Optional[Back] = None
-    rotation: Optional[int] = 0
-    system: Optional[System] = None
-    hyperlanes: list[list[Cube]] = field(default_factory=list)
-
-
-@dataclass(frozen=True, kw_only=True)
-class System:
-    """Class representing the system in a tile."""
-
-    resources: int
-    influence: int
-    planets: int
-    traits: list[Trait] = field(default_factory=list)
-    techs: list[Tech] = field(default_factory=list)
-    anomaly: Optional[Anomaly] = None
-    wormhole: Optional[Wormhole] = None
-    legendary: bool = False
-
-
-@dataclass(frozen=False)
-class Map(JSONWizard, JSONFileWizard):
-    """Class representing a map."""
-
-    class _(JSONWizard.Meta):
-        skip_defaults = True
-
-    players: int
-    style: str
-    description: str
-    source: str
-    layout: dict[Cube, Tile]
+from ti4_mapgen.typing import Faction
 
 
 @dataclass()
 class Board(JSONWizard, JSONFileWizard):
     """Class representing a board."""
 
-    map: InitVar[Map]
-    tiles: InitVar[list[Tile]]
-    factions: InitVar[list[Faction]]
-    layout = None
+    map: dataclasses.InitVar[Map]
+    tiles: dataclasses.InitVar[list[Tile]]
+    factions: dataclasses.InitVar[list[Faction]]
 
     def __post_init__(self, map: Map, stack: list[Tile], factions: list[Faction]):
-        self.players = map.players
+        self.players = map.no_players
         self.style = map.style
         self.layout = deepcopy(map.layout)
         self._setup_board()
