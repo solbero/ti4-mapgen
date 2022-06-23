@@ -178,6 +178,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "ordered-enum"
+version = "0.0.6"
+description = "A small library for adding total orderings to enums"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+dev = ["flake8", "black", "isort", "pytest", "coverage", "twine"]
+
+[[package]]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
@@ -394,7 +405,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ba0c4d7907150cb571715b62dd962f9396e73e7c3602b65c92020b513fd0a2ec"
+content-hash = "34c63782e14b8b6a608ef77bb4465a0d44b50614f372d795dd5b5e8207521cff"
 
 [metadata.files]
 aiofiles = [
@@ -613,6 +624,9 @@ multidict = [
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
+]
+ordered-enum = [
+    {file = "ordered_enum-0.0.6.tar.gz", hash = "sha256:6544c0f528eeeec0bbe7999bf512c40fe62de24bedba9cf881f3bc24f57ad773"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},

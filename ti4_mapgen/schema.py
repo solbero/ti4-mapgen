@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 import enum
+import ordered_enum
 from typing import Optional
 
 import dataclass_wizard
@@ -9,7 +10,7 @@ import dataclass_wizard
 from ti4_mapgen import hex
 
 
-class Letter(enum.Enum):
+class Letter(ordered_enum.OrderedEnum):
     A = "A"
     B = "B"
 
@@ -61,7 +62,7 @@ class Tag(enum.Enum):
     EXTERIOR = "exterior"
 
 
-class FactionName(enum.Enum):
+class Name(enum.Enum):
     ARBOREC = "The Arborec"
     ARGENT = "The Argent Flight"
     CREUSS = "The Ghosts of Creuss"
@@ -89,7 +90,7 @@ class FactionName(enum.Enum):
     YSSARIL = "The Yssaril Tribes"
 
 
-class NumberOfPlayers(enum.Enum):
+class Players(ordered_enum.OrderedEnum):
     ONE = 1
     TWO = 2
     THREE = 3
@@ -118,13 +119,10 @@ class Tile(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
 class Front:
     """Class representing the front of a tile."""
 
-    class _(dataclass_wizard.JSONWizard.Meta):
-        skip_defaults = True
-
     number: int
     letter: Optional[Letter] = None
     release: Release
-    faction: Optional[FactionName] = None
+    faction: Optional[Name] = None
     system: Optional[System] = None
     hyperlanes: list[list[hex.Cube]] = dataclasses.field(default_factory=list)
 
@@ -154,10 +152,7 @@ class System:
 class Map(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
     """Class representing a map."""
 
-    class _(dataclass_wizard.JSONWizard.Meta):
-        skip_defaults = True
-
-    number_of_players: NumberOfPlayers
+    players: Players
     style: str
     description: str
     source: str
@@ -166,5 +161,5 @@ class Map(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
 
 @dataclasses.dataclass(frozen=True)
 class Faction:
-    name: FactionName
+    name: Name
     release: Release
