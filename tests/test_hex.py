@@ -146,14 +146,14 @@ class TestHexOperators:
 
 class TestNeighbor:
     @pytest.mark.parametrize(
-        "direction, expected",
+        ["direction", "expected"],
         [
-            (hex.Direction.N, hex.Cube(0, -1, 1)),
-            (hex.Direction.NE, hex.Cube(1, -1, 0)),
-            (hex.Direction.SE, hex.Cube(1, 0, -1)),
-            (hex.Direction.S, hex.Cube(0, 1, -1)),
-            (hex.Direction.SW, hex.Cube(-1, 1, 0)),
-            (hex.Direction.NW, hex.Cube(-1, 0, 1)),
+            (hex.Adjacent.N, hex.Cube(0, -1, 1)),
+            (hex.Adjacent.NE, hex.Cube(1, -1, 0)),
+            (hex.Adjacent.SE, hex.Cube(1, 0, -1)),
+            (hex.Adjacent.S, hex.Cube(0, 1, -1)),
+            (hex.Adjacent.SW, hex.Cube(-1, 1, 0)),
+            (hex.Adjacent.NW, hex.Cube(-1, 0, 1)),
         ],
     )
     def test_hex_adjacent(self, direction, expected):
@@ -162,7 +162,7 @@ class TestNeighbor:
         assert adjacent == expected
 
     @pytest.mark.parametrize(
-        "direction, expected",
+        ["direction", "expected"],
         [
             (hex.Diagonal.E, hex.Cube(2, -1, -1)),
             (hex.Diagonal.NNE, hex.Cube(1, -2, 1)),
@@ -210,7 +210,7 @@ class TestHexRing:
     def test_hex_ring_direction(self):
         center = hex.Cube(0, 0, 0)
         radius = 1
-        direction = hex.Direction.S
+        direction = hex.Adjacent.S
         ring = list(hex.ring(center, radius, direction=direction))
         expected = [
             hex.Cube(0, 1, -1),
@@ -225,7 +225,7 @@ class TestHexRing:
     def test_hex_ring_move(self):
         center = hex.Cube(0, 0, 0)
         radius = 1
-        move = hex.move.COUNTERCLOCKWISE
+        move = hex.Move.COUNTERCLOCKWISE
         ring = list(hex.ring(center, radius, move=move))
         expected = [
             hex.Cube(0, -1, 1),
@@ -350,7 +350,7 @@ class TestSpiral:
     def test_spiral_direction(self):
         center = hex.Cube(0, 0, 0)
         radius = 1
-        direction = hex.Direction.S
+        direction = hex.Adjacent.S
         spiral = list(hex.spiral(center, radius, direction=direction))
         expected = [
             hex.Cube(0, 0, 0),
