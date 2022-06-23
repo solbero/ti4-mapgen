@@ -4,7 +4,6 @@ import dataclasses
 import enum
 from collections import deque
 from collections.abc import Iterator
-from typing import Iterable, Mapping
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
