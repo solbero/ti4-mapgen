@@ -17,29 +17,55 @@ class Cube:
     def __post_init__(self):
         # Perform sanity check on coordinate.
         if self.q + self.r + self.s != 0:
-            raise ValueError("Sum of 'q', 'r', 's' must be 0")
+            raise ValueError(f"attributes 'q', 'r', 's' must have a sum of 0, not {self.q + self.r + self.s}")
 
-    def __add__(self, cube) -> Cube:
-        match cube:
+    def __add__(self, other) -> Cube:
+        match other:
             case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
                 return Cube(self.q + q, self.r + r, self.s + s)
-        raise TypeError(f"Unsupported operand type(s) for +: '{type(self)}' and '{type(cube)}'")
+            case {**elem}:
+                raise ValueError(
+                    f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
+                )
+            case [*elem]:
+                raise ValueError(f"sequence must have length 3, not {len(elem)}")
+            case _:
+                raise TypeError(
+                    "unsupported operand type(s) for +: " + f"{type(self).__name__!r} and {type(other).__name__!r}"
+                )
 
-    def __sub__(self, cube) -> Cube:
-        match cube:
+    def __sub__(self, other) -> Cube:
+        match other:
             case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
                 return Cube(self.q - q, self.r - r, self.s - s)
-        raise TypeError(f"Unsupported operand type(s) for -: '{type(self)}' and '{type(cube)}'")
+            case {**elem}:
+                raise ValueError(
+                    f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
+                )
+            case [*elem]:
+                raise ValueError(f"sequence must have length 3, not {len(elem)}")
+            case _:
+                raise TypeError(
+                    "unsupported operand type(s) for -: " + f"{type(self).__name__!r} and {type(other).__name__!r}"
+                )
 
-    def __mul__(self, scalar) -> Cube:
-        if isinstance(scalar, int):
-            return Cube(self.q * scalar, self.r * scalar, self.s * scalar)
-        raise TypeError(f"Unsupported operand type(s) for *: '{type(self)}' and '{type(scalar)}'")
+    def __mul__(self, other) -> Cube:
+        match other:
+            case int(other):
+                return Cube(self.q * other, self.r * other, self.s * other)
+            case _:
+                raise TypeError(
+                    f"unsupported operand type(s) for *: {type(self).__name__!r} and {type(other).__name__!r}"
+                )
 
-    def __floordiv__(self, scalar) -> Cube:
-        if isinstance(scalar, int):
-            return Cube(int(self.q / scalar), int(self.r / scalar), int(self.s / scalar))
-        raise TypeError(f"Unsupported operand type(s) for //: '{type(self)}' and '{type(scalar)}'")
+    def __floordiv__(self, other) -> Cube:
+        match other:
+            case int(other):
+                return Cube(int(self.q / other), int(self.r / other), int(self.s / other))
+            case _:
+                raise TypeError(
+                    f"unsupported operand type(s) for //: {type(self).__name__!r} and {type(other).__name__!r}"
+                )
 
     def __abs__(self) -> int:
         return (abs(self.q) + abs(self.r) + abs(self.s)) // 2
