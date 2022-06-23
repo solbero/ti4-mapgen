@@ -283,7 +283,7 @@ class TestHexRotate:
 
 class TestHexDistance:
     @pytest.mark.parametrize(
-        "vector, expected",
+        ["vector", "expected"],
         [
             (hex.Cube(0, 0, 0), 0),
             (hex.Cube(0, -1, 1), 1),
@@ -295,7 +295,7 @@ class TestHexDistance:
         assert length == expected
 
     @pytest.mark.parametrize(
-        "hex1, hex2, expected",
+        ["hex1", "hex2", "expected"],
         [
             (hex.Cube(0, 0, 0), hex.Cube(0, 0, 0), 0),
             (hex.Cube(0, 0, 0), hex.Cube(0, -3, 3), 3),
