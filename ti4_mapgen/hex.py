@@ -71,7 +71,7 @@ class Cube:
         return (abs(self.q) + abs(self.r) + abs(self.s)) // 2
 
 
-class Direction(enum.Enum):
+class Adjacent(enum.Enum):
     N = Cube(0, -1, 1)
     NE = Cube(1, -1, 0)
     SE = Cube(1, 0, -1)
@@ -89,12 +89,12 @@ class Diagonal(enum.Enum):
     SSE = Cube(1, 1, -2)
 
 
-class move(enum.Enum):
+class Move(enum.Enum):
     CLOCKWISE = 1
     COUNTERCLOCKWISE = -1
 
 
-def adjacent(hex: Cube, *, direction: Direction) -> Cube:
+def adjacent(hex: Cube, *, direction: Adjacent) -> Cube:
     """Find an adjacent cube position in direction from initial cube position."""
     return hex + direction.value
 
@@ -104,9 +104,7 @@ def diagonal(hex: Cube, *, direction: Diagonal) -> Cube:
     return hex + direction.value
 
 
-def ring(
-    center: Cube, radius: int, *, direction: Direction = Direction.N, move: move = move.CLOCKWISE
-) -> Iterator[Cube]:
+def ring(center: Cube, radius: int, *, direction: Adjacent = Adjacent.N, move: Move = Move.CLOCKWISE) -> Iterator[Cube]:
     """Calculate all positions on a ring which is radius distance from a center position.
 
     The iterator yields cube positions in the ring starting from the passed direction and moving
@@ -124,9 +122,9 @@ def ring(
     vector = direction.value
     scaled_vector = vector * radius
     position = center + scaled_vector
-    neighbors = deque(direction.value for direction in Direction)
+    neighbors = deque(direction.value for direction in Adjacent)
 
-    if move is move.COUNTERCLOCKWISE:
+    if move is Move.COUNTERCLOCKWISE:
         neighbors.reverse()
 
     # Rearranges 'neighbors' to the correct order for moving around the ring
@@ -136,7 +134,7 @@ def ring(
     for neighbor in neighbors:
         for _ in range(radius):
             yield position
-            position = adjacent(position, direction=Direction(neighbor))
+            position = adjacent(position, direction=Adjacent(neighbor))
 
 
 def _rotate_clockwise(hex: Cube) -> Cube:
@@ -172,9 +170,9 @@ def rotate(hex: Cube, center: Cube, *, angle: int) -> Cube:
     steps = abs((angle % 360) // 60)
 
     if angle > 0:
-        *_, vector = [_rotate_clockwise(vector) for _ in range(steps)]
+        *_, vector = (_rotate_clockwise(vector) for _ in range(steps))
     elif angle < 0:
-        *_, vector = [_rotate_counterclockwise(vector) for _ in range(steps)]
+        *_, vector = (_rotate_counterclockwise(vector) for _ in range(steps))
 
     return center + vector
 
@@ -190,7 +188,7 @@ def distance(hex1: Cube, hex2: Cube) -> int:
 
 
 def spiral(
-    center: Cube, radius: int, *, direction: Direction = Direction.N, move: move = move.CLOCKWISE
+    center: Cube, radius: int, *, direction: Adjacent = Adjacent.N, move: Move = Move.CLOCKWISE
 ) -> Iterator[Cube]:
     """Calculate all positions in a spiral pattern which is radius distance from a center position.
 
