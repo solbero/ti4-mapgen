@@ -110,7 +110,7 @@ class Tile(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
 
     tag: Tag
     position: Optional[hex.Cube] = None
-    front: Front
+    front: Optional[Front] = None
     back: Optional[Back] = None
     rotation: Optional[int] = 0
 
@@ -151,6 +151,9 @@ class System:
 @dataclasses.dataclass(frozen=True)
 class Map(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
     """Class representing a map."""
+
+    class _(dataclass_wizard.JSONWizard.Meta):
+        skip_defaults = True
 
     players: Players
     style: str
