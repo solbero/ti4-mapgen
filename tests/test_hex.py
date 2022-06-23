@@ -18,10 +18,9 @@ class TestHex:
 
     def test_hex_raises(self):
         with pytest.raises(ValueError) as exc_info:
-            hex.Cube(1, 0, 1)
-        message, *_ = exc_info.value.args
-        expected = "Sum of 'q', 'r', 's' must be 0"
-        assert message == expected
+            _ = hex.Cube(1, 0, 1)
+        error_message = str(exc_info.value)
+        assert error_message == "attributes 'q', 'r', 's' must have a sum of 0, not 2"
 
 
 class TestHexOperators:
@@ -36,7 +35,7 @@ class TestHexOperators:
         assert hex1 != hex2
 
     @pytest.mark.parametrize(
-        "hex2, expected",
+        ["hex2", "expected"],
         [
             (hex.Cube(0, -1, 1), hex.Cube(0, 0, 0)),
             ((0, -1, 1), hex.Cube(0, 0, 0)),
@@ -49,7 +48,25 @@ class TestHexOperators:
         assert hex1 + hex2 == expected
 
     @pytest.mark.parametrize(
-        "hex2, expected",
+        ["hex2", "exception", "message"],
+        [
+            ({"q": 0, "r": -1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'q', 'r'"),
+            ({"a": 0, "b": -1, "c": 1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'a', 'b', 'c'"),
+            ((1, -1), ValueError, "sequence must have length 3, not 2"),
+            ((0, -1, 1, 0), ValueError, "sequence must have length 3, not 4"),
+            (("0", "-1", "1"), TypeError, "unsupported operand type(s) for +: 'int' and 'str'"),
+            ("0, -1, 1", TypeError, "unsupported operand type(s) for +: 'Cube' and 'str'"),
+        ],
+    )
+    def test_hex_add_raises(self, hex2, exception, message):
+        hex1 = hex.Cube(0, 1, -1)
+        with pytest.raises(exception) as exc_info:
+            _ = hex1 + hex2
+        error_message = str(exc_info.value)
+        assert error_message == message
+
+    @pytest.mark.parametrize(
+        ["hex2", "expected"],
         [
             (hex.Cube(0, -1, 1), hex.Cube(0, 2, -2)),
             ((0, -1, 1), hex.Cube(0, 2, -2)),
@@ -61,13 +78,45 @@ class TestHexOperators:
         hex1 = hex.Cube(0, 1, -1)
         assert hex1 - hex2 == expected
 
+    @pytest.mark.parametrize(
+        ["hex2", "exception", "message"],
+        [
+            ({"q": 0, "r": -1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'q', 'r'"),
+            ({"a": 0, "b": -1, "c": 1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'a', 'b', 'c'"),
+            ((1, -1), ValueError, "sequence must have length 3, not 2"),
+            ((0, -1, 1, 0), ValueError, "sequence must have length 3, not 4"),
+            (("0", "-1", "1"), TypeError, "unsupported operand type(s) for -: 'int' and 'str'"),
+            ("0, -1, 1", TypeError, "unsupported operand type(s) for -: 'Cube' and 'str'"),
+        ],
+    )
+    def test_hex_sub_raises(self, hex2, exception, message):
+        hex1 = hex.Cube(0, 1, -1)
+        with pytest.raises(exception) as exc_info:
+            _ = hex1 - hex2
+        error_message = str(exc_info.value)
+        assert error_message == message
+
     def test_hex_mul(self):
         hex_ = hex.Cube(0, 1, -1)
         expected = hex.Cube(0, 2, -2)
         assert hex_ * 2 == expected
 
     @pytest.mark.parametrize(
-        "hex_, k, expected",
+        ["hex2", "exception", "message"],
+        [
+            (2.0, TypeError, "unsupported operand type(s) for *: 'Cube' and 'float'"),
+            ("2", TypeError, "unsupported operand type(s) for *: 'Cube' and 'str'"),
+        ],
+    )
+    def test_hex_mul_raises(self, hex2, exception, message):
+        hex1 = hex.Cube(0, 1, -1)
+        with pytest.raises(exception) as exc_info:
+            _ = hex1 * hex2
+        error_message = str(exc_info.value)
+        assert error_message == message
+
+    @pytest.mark.parametrize(
+        ["hex_", "k", "expected"],
         [
             (hex.Cube(0, -2, 2), 2, hex.Cube(0, -1, 1)),
             (hex.Cube(0, -1, 1), 2, hex.Cube(0, 0, 0)),
@@ -75,6 +124,20 @@ class TestHexOperators:
     )
     def test_hex_floordiv(self, hex_, k, expected):
         assert hex_ // k == expected
+
+    @pytest.mark.parametrize(
+        ["hex2", "exception", "message"],
+        [
+            (2.0, TypeError, "unsupported operand type(s) for //: 'Cube' and 'float'"),
+            ("2", TypeError, "unsupported operand type(s) for //: 'Cube' and 'str'"),
+        ],
+    )
+    def test_hex_floordiv_raises(self, hex2, exception, message):
+        hex1 = hex.Cube(0, 1, -1)
+        with pytest.raises(exception) as exc_info:
+            _ = hex1 // hex2
+        error_message = str(exc_info.value)
+        assert error_message == message
 
     def test_hex_abs(self):
         hex_ = hex.Cube(0, -2, 2)
