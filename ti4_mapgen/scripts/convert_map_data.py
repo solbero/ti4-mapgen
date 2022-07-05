@@ -1,4 +1,4 @@
-from typing import Any, Optional, cast
+from typing import Any
 
 import dataclass_wizard
 import requests
@@ -38,7 +38,7 @@ def to_layout(data) -> list[schema.Tile]:
     index_to_position = {index: position for index, position in enumerate(hex.spiral(hex.Cube(0, 0, 0), 4))}
 
     file = "./ti4_mapgen/data/tile_data.json"
-    tiles = util.dataclass_list_from_file(schema.Tile, file)
+    tiles = util.dataclass_container_from_file(schema.Tile, file)
 
     layout = []
 
