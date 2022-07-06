@@ -1,5 +1,5 @@
-from ti4_mapgen import __version__
+import ti4_mapgen
 
 
 def test_version():
-    assert __version__ == "0.1.0"
+    assert ti4_mapgen.__version__ == "0.1.0"
