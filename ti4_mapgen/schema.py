@@ -163,6 +163,8 @@ class Map(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
 
 
 @dataclasses.dataclass(frozen=True)
-class Faction:
+class Faction(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
+    """Class representing a faction."""
+
     name: Name
     release: Release
