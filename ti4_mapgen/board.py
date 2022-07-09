@@ -18,20 +18,20 @@ class Board(dataclass_wizard.JSONWizard):
 
     layout: list[schema.Tile]
     stack: list[schema.Tile]
-    home_system_tiles: dataclasses.InitVar[list[schema.Tile]]
+    homes: dataclasses.InitVar[list[schema.Tile]]
 
-    def __post_init__(self, home_systems):
-        random.shuffle(self.stack)
-        self._setup(self.layout, self.stack, home_systems)
+    def __post_init__(self, homes):
+        self._setup(self.layout, self.stack, homes)
 
-    def _setup(self, layout: list[schema.Tile], stack: list[schema.Tile], home_system_tiles: list[schema.Tile]):
+    def _setup(self, layout: list[schema.Tile], stack: list[schema.Tile], homes: list[schema.Tile]):
         """Populate the layout with tiles from the stack."""
         for index, tile in enumerate(layout):
-            if tile.tag is schema.Tag.HOME and home_system_tiles:
-                home_system = home_system_tiles.pop(0)
+            if homes and tile.tag is schema.Tag.HOME:
+                home_system = homes.pop(0)
                 home_system.position = tile.position
                 layout[index] = home_system
             elif tile.tag is schema.Tag.SYSTEM and stack:
-                system = stack.pop(0)
+                random_index = random.randint(0, len(stack) - 1)
+                system = stack.pop(random_index)
                 system.position = tile.position
                 layout[index] = system
