@@ -12,10 +12,10 @@ def load(url: str) -> Any:
     return response.json()
 
 
-def parse(response: dict[str, dict]) -> dataclass_wizard.Container[schema.Tile]:
+def parse(response: dict[str, dict]) -> dataclass_wizard.Container[schema.TileBase]:
     """Parse JSON tile data to tile dataclasses."""
     # List like dataclass container to hold the tiles.
-    tiles = dataclass_wizard.Container[schema.Tile]()
+    tiles = dataclass_wizard.Container[schema.TileBase]()
 
     for ordinal, data in response.items():
         # Separate tile numbers from tile letters, e.g. '81A'.
@@ -28,18 +28,18 @@ def parse(response: dict[str, dict]) -> dataclass_wizard.Container[schema.Tile]:
 
         # Parse the home system tiles.
         if 1 <= number <= 17 or 52 <= number <= 58:
-            tile = to_tile(schema.Tag.HOME, number, letter, data)
+            tile = to_tile(schema.Type.HOME, number, letter, data)
         elif number == 18:
-            tile = to_tile(schema.Tag.CENTER, number, letter, data)
+            tile = to_tile(schema.Type.CENTER, number, letter, data)
         # Parse the system tiles.
         elif 19 <= number <= 50 or 59 <= number <= 80:
-            tile = to_tile(schema.Tag.SYSTEM, number, letter, data)
+            tile = to_tile(schema.Type.SYSTEM, number, letter, data)
         # Parse the hyperlane tiles.
         elif 83 <= number <= 91:
-            tile = to_tile(schema.Tag.HYPERLANE, number, letter, data)
+            tile = to_tile(schema.Type.HYPERLANE, number, letter, data)
         # Parse the tiles which are outside the board.
         elif number == 51 or number == 81 or number == 82:
-            tile = to_tile(schema.Tag.EXTERIOR, number, letter, data)
+            tile = to_tile(schema.Type.EXTERIOR, number, letter, data)
         else:
             raise ValueError(f"tile number must be between 1 and 91, number is {number}")
 
@@ -48,14 +48,14 @@ def parse(response: dict[str, dict]) -> dataclass_wizard.Container[schema.Tile]:
     return tiles
 
 
-def to_tile(tag: schema.Tag, number: int, letter: Optional[schema.Letter], data: dict[str, Any]) -> schema.Tile:
+def to_tile(tag: schema.Type, number: int, letter: Optional[schema.Letter], data: dict[str, Any]) -> schema.TileBase:
     """Parse tile data to internal dataclass schema."""
     tile = {}
     tile["tag"] = tag
     tile["front"] = to_front(number, letter, data)
     tile["back"] = to_back(number, data)
 
-    return schema.Tile(**tile)
+    return schema.TileBase(**tile)
 
 
 def to_front(number: int, letter: Optional[schema.Letter], data: dict[str, Any]) -> schema.Front:

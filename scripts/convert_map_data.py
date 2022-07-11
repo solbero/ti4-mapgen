@@ -30,7 +30,7 @@ def parse(response: dict[str, dict]) -> dataclass_wizard.Container[schema.Map]:
     return maps
 
 
-def to_layout(data) -> list[schema.Tile]:
+def to_layout(data) -> list[schema.TileBase]:
     data_homes = data["home_worlds"]
     data_systems = data["primary_tiles"] + data["secondary_tiles"] + data["tertiary_tiles"]
     data_hyperlanes = data["hyperlane_tiles"]
@@ -38,7 +38,7 @@ def to_layout(data) -> list[schema.Tile]:
     index_to_position = {index: position for index, position in enumerate(hex.spiral(hex.Cube(0, 0, 0), 4))}
 
     file = "./ti4_mapgen/data/tile_data.json"
-    tiles = util.dataclass_container_from_file(schema.Tile, file)
+    tiles = util.dataclass_container_from_file(schema.TileBase, file)
 
     layout = []
 
@@ -50,13 +50,13 @@ def to_layout(data) -> list[schema.Tile]:
     for index in data_homes:
         position = index_to_position[index]
         back = schema.Back(color=schema.Color.GREEN)
-        tile = schema.Tile(position=position, tag=schema.Tag.HOME, back=back)
+        tile = schema.TileBase(position=position, type=schema.Type.HOME, back=back)
         layout.append(tile)
 
     for index in data_systems:
         position = index_to_position[index]
         back = schema.Back(color=schema.Color.BLUE)
-        tile = schema.Tile(position=position, tag=schema.Tag.SYSTEM, back=back)
+        tile = schema.TileBase(position=position, type=schema.Type.SYSTEM, back=back)
         layout.append(tile)
 
     for index, ordinal, rotation in data_hyperlanes:
