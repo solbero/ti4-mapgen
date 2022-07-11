@@ -20,52 +20,24 @@ class Cube:
             raise ValueError(f"attributes 'q', 'r', 's' must have a sum of 0, not {self.q + self.r + self.s}")
 
     def __add__(self, other) -> Cube:
-        match other:
-            case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
-                return Cube(q=self.q + q, r=self.r + r, s=self.s + s)
-            case {**elem}:
-                raise ValueError(
-                    f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
-                )
-            case [*elem]:
-                raise ValueError(f"sequence must have length 3, not {len(elem)}")
-            case _:
-                raise TypeError(
-                    "unsupported operand type(s) for +: " + f"{type(self).__name__!r} and {type(other).__name__!r}"
-                )
+        if isinstance(other, Cube):
+            return Cube(q=self.q + other.q, r=self.r + other.r, s=self.s + other.s)
+        raise TypeError("unsupported operand type(s) for +: " + f"{type(self).__name__!r} and {type(other).__name__!r}")
 
     def __sub__(self, other) -> Cube:
-        match other:
-            case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
-                return Cube(q=self.q - q, r=self.r - r, s=self.s - s)
-            case {**elem}:
-                raise ValueError(
-                    f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
-                )
-            case [*elem]:
-                raise ValueError(f"sequence must have length 3, not {len(elem)}")
-            case _:
-                raise TypeError(
-                    "unsupported operand type(s) for -: " + f"{type(self).__name__!r} and {type(other).__name__!r}"
-                )
+        if isinstance(other, Cube):
+            return Cube(q=self.q - other.q, r=self.r - other.r, s=self.s - other.s)
+        raise TypeError("unsupported operand type(s) for -: " + f"{type(self).__name__!r} and {type(other).__name__!r}")
 
     def __mul__(self, other) -> Cube:
-        match other:
-            case int(other):
-                return Cube(q=self.q * other, r=self.r * other, s=self.s * other)
-            case _:
-                raise TypeError(
-                    f"unsupported operand type(s) for *: {type(self).__name__!r} and {type(other).__name__!r}"
-                )
+        if isinstance(other, int):
+            return Cube(q=self.q * other, r=self.r * other, s=self.s * other)
+        raise TypeError(f"unsupported operand type(s) for *: {type(self).__name__!r} and {type(other).__name__!r}")
 
     def __floordiv__(self, other) -> Cube:
-        match other:
-            case int(other):
-                return Cube(q=int(self.q / other), r=int(self.r / other), s=int(self.s / other))
-            case _:
-                raise TypeError(
-                    f"unsupported operand type(s) for //: {type(self).__name__!r} and {type(other).__name__!r}"
-                )
+        if isinstance(other, int):
+            return Cube(q=int(self.q / other), r=int(self.r / other), s=int(self.s / other))
+        raise TypeError(f"unsupported operand type(s) for //: {type(self).__name__!r} and {type(other).__name__!r}")
 
     def __abs__(self) -> int:
         return (abs(self.q) + abs(self.r) + abs(self.s)) // 2
