@@ -38,9 +38,6 @@ class TestHexOperators:
         ["hex2", "expected"],
         [
             (hex.Cube(0, -1, 1), hex.Cube(0, 0, 0)),
-            ((0, -1, 1), hex.Cube(0, 0, 0)),
-            ([0, -1, 1], hex.Cube(0, 0, 0)),
-            ({"q": 0, "r": -1, "s": 1}, hex.Cube(0, 0, 0)),
         ],
     )
     def test_hex_add(self, hex2, expected):
@@ -50,11 +47,9 @@ class TestHexOperators:
     @pytest.mark.parametrize(
         ["hex2", "exception", "message"],
         [
-            ({"q": 0, "r": -1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'q', 'r'"),
-            ({"a": 0, "b": -1, "c": 1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'a', 'b', 'c'"),
-            ((1, -1), ValueError, "sequence must have length 3, not 2"),
-            ((0, -1, 1, 0), ValueError, "sequence must have length 3, not 4"),
-            (("0", "-1", "1"), TypeError, "unsupported operand type(s) for +: 'int' and 'str'"),
+            ((0, -1, 1), TypeError, "unsupported operand type(s) for +: 'Cube' and 'tuple'"),
+            ([0, -1, 1], TypeError, "unsupported operand type(s) for +: 'Cube' and 'list'"),
+            ({"q": 0, "r": -1, "s": 1}, TypeError, "unsupported operand type(s) for +: 'Cube' and 'dict'"),
             ("0, -1, 1", TypeError, "unsupported operand type(s) for +: 'Cube' and 'str'"),
         ],
     )
@@ -69,9 +64,6 @@ class TestHexOperators:
         ["hex2", "expected"],
         [
             (hex.Cube(0, -1, 1), hex.Cube(0, 2, -2)),
-            ((0, -1, 1), hex.Cube(0, 2, -2)),
-            ([0, -1, 1], hex.Cube(0, 2, -2)),
-            ({"q": 0, "r": -1, "s": 1}, hex.Cube(0, 2, -2)),
         ],
     )
     def test_hex_sub(self, hex2, expected):
@@ -81,11 +73,9 @@ class TestHexOperators:
     @pytest.mark.parametrize(
         ["hex2", "exception", "message"],
         [
-            ({"q": 0, "r": -1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'q', 'r'"),
-            ({"a": 0, "b": -1, "c": 1}, ValueError, "mapping must contain keys 'q', 'r', 's', not 'a', 'b', 'c'"),
-            ((1, -1), ValueError, "sequence must have length 3, not 2"),
-            ((0, -1, 1, 0), ValueError, "sequence must have length 3, not 4"),
-            (("0", "-1", "1"), TypeError, "unsupported operand type(s) for -: 'int' and 'str'"),
+            ((0, -1, 1), TypeError, "unsupported operand type(s) for -: 'Cube' and 'tuple'"),
+            ([0, -1, 1], TypeError, "unsupported operand type(s) for -: 'Cube' and 'list'"),
+            ({"q": 0, "r": -1, "s": 1}, TypeError, "unsupported operand type(s) for -: 'Cube' and 'dict'"),
             ("0, -1, 1", TypeError, "unsupported operand type(s) for -: 'Cube' and 'str'"),
         ],
     )
