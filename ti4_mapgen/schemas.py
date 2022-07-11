@@ -1,60 +1,59 @@
 from __future__ import annotations
 
-import dataclasses
-import enum
-import ordered_enum
+from enum import Enum, IntEnum
 from typing import Optional
 
-import dataclass_wizard
+from ordered_enum import OrderedEnum, ValueOrderedEnum
+from pydantic import BaseModel, Field
 
-from ti4_mapgen import hex
+from hex import Cube
 
 
-class Letter(ordered_enum.OrderedEnum):
+class Letter(str, Enum):
     A = "A"
     B = "B"
 
 
-class Color(enum.Enum):
+class Color(str, Enum):
     BLUE = "blue"
     GREEN = "green"
     RED = "red"
 
 
-class Wormhole(enum.Enum):
+class Wormhole(str, Enum):
     ALPHA = "alpha"
     BETA = "beta"
     DELTA = "delta"
     GAMMA = "gamma"
 
 
-class Trait(enum.Enum):
+class Trait(str, Enum):
     CULTURAL = "cultural"
     HAZARDOUS = "hazardous"
     INDUSTRIAL = "industrial"
 
 
-class Release(enum.Enum):
+class Release(str, Enum):
     BASE = "base"
     POK = "pok"
     CODEX_3 = "codex-3"
 
 
-class Tech(enum.Enum):
+class Tech(str, Enum):
     BIOTIC = "biotic"
     CYBERNETIC = "cybernetic"
     PROPULSION = "propulsion"
     WARFARE = "warfare"
 
 
-class Anomaly(enum.Enum):
+class Anomaly(str, Enum):
     ASTEROID_FIELD = "asteroid-field"
     GRAVITY_RIFT = "gravity-rift"
     NEBULA = "nebula"
     SUPERNOVA = "supernova"
 
 
-class Tag(enum.Enum):
+class Type(str, Enum):
     CENTER = "center"
     HOME = "home"
     HYPERLANE = "hyperlane"
@@ -62,7 +61,7 @@ class Tag(enum.Enum):
     EXTERIOR = "exterior"
 
 
-class Name(enum.Enum):
+class Name(str, Enum):
     ARBOREC = "The Arborec"
     ARGENT = "The Argent Flight"
     CREUSS = "The Ghosts of Creuss"
@@ -90,7 +89,7 @@ class Name(enum.Enum):
     YSSARIL = "The Yssaril Tribes"
 
 
-class Players(ordered_enum.OrderedEnum):
+class Players(IntEnum):
     ONE = 1
     TWO = 2
     THREE = 3
@@ -101,69 +100,63 @@ class Players(ordered_enum.OrderedEnum):
     EIGHT = 8
 
 
-@dataclasses.dataclass(kw_only=True)
-class Tile(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
-    """Class representing a tile."""
-
-    class _(dataclass_wizard.JSONWizard.Meta):
-        skip_defaults = True
-
-    tag: Tag
-    position: Optional[hex.Cube] = None
-    front: Optional[Front] = None
-    back: Optional[Back] = None
-    rotation: Optional[int] = 0
-
-
-@dataclasses.dataclass(frozen=True, kw_only=True)
-class Front:
-    """Class representing the front of a tile."""
-
-    number: int
-    letter: Optional[Letter] = None
-    release: Release
-    faction: Optional[Name] = None
-    system: Optional[System] = None
-    hyperlanes: list[list[hex.Cube]] = dataclasses.field(default_factory=list)
-
-
-@dataclasses.dataclass(frozen=True)
-class Back:
-    """Class representing the back of a tile."""
-
-    color: Color
-
-
-@dataclasses.dataclass(frozen=True)
-class System:
+class System(BaseModel):
     """Class representing a system in a tile."""
 
     resources: int
     influence: int
     planets: int
-    traits: list[Trait] = dataclasses.field(default_factory=list)
-    techs: list[Tech] = dataclasses.field(default_factory=list)
+    traits: list[Trait] = Field(default_factory=list)
+    techs: list[Tech] = Field(default_factory=list)
     anomaly: Optional[Anomaly] = None
     wormhole: Optional[Wormhole] = None
     legendary: bool = False
 
 
-@dataclasses.dataclass(frozen=True)
-class Map(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
-    """Class representing a map."""
+class Tile(BaseModel):
+    """Document representing a tile."""
 
-    class _(dataclass_wizard.JSONWizard.Meta):
-        skip_defaults = True
+    type: Type
+    number: int
+    letter: Optional[Letter] = None
+    release: Release
+    faction: Optional[Name] = None
+    back: Optional[Color] = None
+    system: Optional[System] = None
+    hyperlanes: list[list[Cube]] = Field(default_factory=list)
+
+
+class TileInDB(Tile):
+    key: str
+
+
+class TileRead(Tile):
+    ...
+
+
+class TileQuery(BaseModel):
+    type: Optional[Type] = None
+    number: Optional[int] = Field(default=None, ge=1, le=91)
+    letter: Optional[Letter] = None
+    release: Optional[Release] = None
+    back: Optional[Color] = None
+
+
+class Map(BaseModel):
+    """Class representing a map."""
 
     players: Players
     style: str
     description: str
     source: str
-    layout: list[Tile]
+    layout: list
 
 
-@dataclasses.dataclass(frozen=True)
-class Faction(dataclass_wizard.JSONWizard, dataclass_wizard.JSONFileWizard):
+class MapInDB(Map):
+    key: str
+
+
+class Faction(BaseModel):
     """Class representing a faction."""
 
     name: Name
