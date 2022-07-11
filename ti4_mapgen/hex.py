@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-import dataclasses
 import enum
 from collections import deque
 from collections.abc import Iterator
 
+from pydantic import dataclasses
 
-@dataclasses.dataclass(frozen=True, slots=True)
+
+@dataclasses.dataclass(frozen=True)
 class Cube:
     "A cube representation of a position or vector in a hexagonal grid."
     q: int
@@ -21,7 +22,7 @@ class Cube:
     def __add__(self, other) -> Cube:
         match other:
             case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
-                return Cube(self.q + q, self.r + r, self.s + s)
+                return Cube(q=self.q + q, r=self.r + r, s=self.s + s)
             case {**elem}:
                 raise ValueError(
                     f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
@@ -36,7 +37,7 @@ class Cube:
     def __sub__(self, other) -> Cube:
         match other:
             case Cube(q, r, s) | (q, r, s) | {"q": q, "r": r, "s": s}:
-                return Cube(self.q - q, self.r - r, self.s - s)
+                return Cube(q=self.q - q, r=self.r - r, s=self.s - s)
             case {**elem}:
                 raise ValueError(
                     f"mapping must contain keys 'q', 'r', 's', not {', '.join(f'{k!r}' for k in elem.keys())}"
@@ -51,7 +52,7 @@ class Cube:
     def __mul__(self, other) -> Cube:
         match other:
             case int(other):
-                return Cube(self.q * other, self.r * other, self.s * other)
+                return Cube(q=self.q * other, r=self.r * other, s=self.s * other)
             case _:
                 raise TypeError(
                     f"unsupported operand type(s) for *: {type(self).__name__!r} and {type(other).__name__!r}"
@@ -60,7 +61,7 @@ class Cube:
     def __floordiv__(self, other) -> Cube:
         match other:
             case int(other):
-                return Cube(int(self.q / other), int(self.r / other), int(self.s / other))
+                return Cube(q=int(self.q / other), r=int(self.r / other), s=int(self.s / other))
             case _:
                 raise TypeError(
                     f"unsupported operand type(s) for //: {type(self).__name__!r} and {type(other).__name__!r}"
@@ -71,21 +72,21 @@ class Cube:
 
 
 class Adjacent(enum.Enum):
-    N = Cube(0, -1, 1)
-    NE = Cube(1, -1, 0)
-    SE = Cube(1, 0, -1)
-    S = Cube(0, 1, -1)
-    SW = Cube(-1, 1, 0)
-    NW = Cube(-1, 0, 1)
+    N = Cube(q=0, r=-1, s=1)
+    NE = Cube(q=1, r=-1, s=0)
+    SE = Cube(q=1, r=0, s=-1)
+    S = Cube(q=0, r=1, s=-1)
+    SW = Cube(q=-1, r=1, s=0)
+    NW = Cube(q=-1, r=0, s=1)
 
 
 class Diagonal(enum.Enum):
-    E = Cube(2, -1, -1)
-    NNE = Cube(1, -2, 1)
-    NNW = Cube(-1, -1, 2)
-    W = Cube(-2, 1, 1)
-    SSW = Cube(-1, 2, -1)
-    SSE = Cube(1, 1, -2)
+    E = Cube(q=2, r=-1, s=-1)
+    NNE = Cube(q=1, r=-2, s=1)
+    NNW = Cube(q=-1, r=-1, s=2)
+    W = Cube(q=-2, r=1, s=1)
+    SSW = Cube(q=-1, r=2, s=-1)
+    SSE = Cube(q=1, r=1, s=-2)
 
 
 class Move(enum.Enum):
@@ -138,12 +139,12 @@ def ring(center: Cube, radius: int, *, direction: Adjacent = Adjacent.N, move: M
 
 def _rotate_clockwise(hex: Cube) -> Cube:
     """Rotate a cube vector counterclockwise."""
-    return Cube(-hex.r, -hex.s, -hex.q)
+    return Cube(q=-hex.r, r=-hex.s, s=-hex.q)
 
 
 def _rotate_counterclockwise(hex: Cube) -> Cube:
     """Rotate a cube vector counterclockwise."""
-    return Cube(-hex.s, -hex.q, -hex.r)
+    return Cube(q=-hex.s, r=-hex.q, s=-hex.r)
 
 
 def rotate(hex: Cube, center: Cube, *, angle: int) -> Cube:
