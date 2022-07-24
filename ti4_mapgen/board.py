@@ -2,11 +2,8 @@ from __future__ import annotations
 
 import dataclasses
 import random
-from typing import Optional
 
-import dataclass_wizard
-
-from ti4_mapgen import schema
+from ti4_mapgen import schemas
 
 
 @dataclasses.dataclass()
@@ -16,21 +13,21 @@ class Board(dataclass_wizard.JSONWizard):
     class _(dataclass_wizard.JSONWizard.Meta):
         skip_defaults = True
 
-    layout: list[schema.Tile]
-    stack: list[schema.Tile]
-    homes: dataclasses.InitVar[list[schema.Tile]]
+    layout: list[schemas.Tile]
+    stack: list[schemas.Tile]
+    homes: dataclasses.InitVar[list[schemas.Tile]]
 
     def __post_init__(self, homes):
         self._setup(self.layout, self.stack, homes)
 
-    def _setup(self, layout: list[schema.Tile], stack: list[schema.Tile], homes: list[schema.Tile]):
+    def _setup(self, layout: list[schemas.Tile], stack: list[schemas.Tile], homes: list[schemas.Tile]):
         """Populate the layout with tiles from the stack."""
         for index, tile in enumerate(layout):
-            if homes and tile.tag is schema.Tag.HOME:
+            if homes and tile.type is schemas.Type.HOME:
                 home_system = homes.pop(0)
                 home_system.position = tile.position
                 layout[index] = home_system
-            elif tile.tag is schema.Tag.SYSTEM and stack:
+            elif tile.type is schemas.Type.SYSTEM and stack:
                 random_index = random.randint(0, len(stack) - 1)
                 system = stack.pop(random_index)
                 system.position = tile.position

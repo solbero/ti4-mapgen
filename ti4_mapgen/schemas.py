@@ -6,7 +6,7 @@ from typing import Optional
 from ordered_enum import OrderedEnum, ValueOrderedEnum
 from pydantic import BaseModel, Field
 
-from hex import Cube
+from ti4_mapgen import hex
 
 
 class Letter(str, Enum):
@@ -123,7 +123,7 @@ class Tile(BaseModel):
     faction: Optional[Name] = None
     back: Optional[Color] = None
     system: Optional[System] = None
-    hyperlanes: list[list[Cube]] = Field(default_factory=list)
+    hyperlanes: list[list[hex.Cube]] = Field(default_factory=list)
 
 
 class TileInDB(Tile):
